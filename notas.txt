@@ -16,7 +16,4 @@ npm i webpack-dev-server
 npx ejecuta uno de los modulos instalados localmente. 
 npx webpack, busca el archivo de configuracion y genera el bundle con lo que encuentra.
 
-
-
-
-21:14 ytb
+5) npx webpack-dev-server (para configurar el servidor de desarrollo)
