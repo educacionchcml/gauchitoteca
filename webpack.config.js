@@ -1,16 +1,48 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
+    mode: 'production',
+    stats: {
+        children: true,
+    },
     entry : {
-        app: './src/app/index.js',
+        app: [
+            '@babel/polyfill',
+            './src/index.js'
+            ]
     },
     output : {
         path: path.resolve(__dirname, 'build'),
-        filename: 'js/app.bundle.js'
+        filename: '[name].bundle.js',
     },
     devServer: {
         port: 4000,
+    },
+    performance: { hints: false },
+    optimization: {
+        splitChunks: {
+            cacheGroups:{
+                react: { test: /[\\/]node_modules[\\/]((react).*)[\\/]/, name: "react", chunks: "all"},
+                commons: { test: /[\\/]node_modules[\\/]((?!react).*)[\\/]/, name: "common", chunks: "all"}
+            }
+            },
+    },
+    module: {
+        rules: [
+            {
+                test: /\.css$/,
+                use: [
+                    MiniCssExtractPlugin.loader,
+                    'css-loader'
+                ]
+            },
+            {
+                test: /\.js$/,
+                loader: 'babel-loader',
+            }
+        ]
     },
     plugins: [
         new HtmlWebpackPlugin({
@@ -24,6 +56,10 @@ module.exports = {
                 removeStyleLinkTypeAttributes: true,
                 useShortDoctype: true
               }
-        })
-    ]
+        }),
+        new MiniCssExtractPlugin({
+            filename: './css/app.bundle.css'
+        }),
+        
+    ]    
 }

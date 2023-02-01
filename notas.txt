@@ -12,8 +12,22 @@ npm i babel-loader
 npm i html-webpack-plugin
 npm i webpack-dev-server
 
-4)  npx webpack (-d desarrollo (legible) -p produccion (minificado))
+4)  npx webpack 
+setear el mode en webpack.config.js mode:{"development"} || production
 npx ejecuta uno de los modulos instalados localmente. 
 npx webpack, busca el archivo de configuracion y genera el bundle con lo que encuentra.
 
 5) npx webpack-dev-server (para configurar el servidor de desarrollo)
+
+6) npm i css-loader style-loader
+
+7) npm i mini-css-extract-plugin
+
+8) npm i webpack-bundle-analyzer
+
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+
+(en plugins)
+new BundleAnalyzerPlugin({
+            generateStatsFile: true
+        })
