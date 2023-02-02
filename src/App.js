@@ -1,9 +1,13 @@
 import React from "react";
-import "./App.css"
+import "./App.css";
+//import {db} from "./firebase";
+import { Home } from "./Layout/Home"
 
 function App() {
     return(
-        <h1 className="titulo">GAUCHITOTECA</h1>
+        <div className="app-container">
+            <Home></Home>
+        </div>
     )
 }
 
