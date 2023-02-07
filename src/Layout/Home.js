@@ -1,8 +1,12 @@
-import React from "react"
-import "./Home.css"
+import React from "react";
+import FormPedidos from "../Components/FormPedidos";
+import {useModal} from "./../Hooks/useModal";
+import "./Home.css";
 export function Home (){
+    const [isOpenFormPedidos, openFormPedidos, closeFormPedidos] = useModal(false);
     return (
         <div className="home-container">
+            {isOpenFormPedidos && <FormPedidos closeFormPedidos={closeFormPedidos}></FormPedidos>}
             <div className="titulo-container">
                 <h1 className="titulo">GAUCHITOTECA</h1>
             </div>
@@ -12,8 +16,8 @@ export function Home (){
                 <img className="gaucho" src="https://firebasestorage.googleapis.com/v0/b/gauchitoteca.appspot.com/o/layout%2Fgauchitoteca%20altar2-05.png?alt=media&token=5fe477c4-efb0-4fb1-977b-ff558ad20c9e"></img>
             </div>
             <div className="botones-container">
-            <button class="button-30" role="button">PEDIRLE</button>
-            <button class="button-30" role="button">ARCHIVO</button>
+            <button className="button-30" role="button" onClick={openFormPedidos}>PEDIRLE</button>
+            <button className="button-30" role="button">ARCHIVO</button>
             </div>
         </div>
     )
