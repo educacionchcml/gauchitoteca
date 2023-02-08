@@ -8,9 +8,9 @@
     justify-content: center;
 }
 .pedidos-buttonCerrar {
-position: absolute;
-top: 58vh;
-    right: 20px;
+    position: absolute;
+    top: calc(55vh + 12px);
+    right: 36px;
     width: 35px;
     height: 35px;
     background-color: transparent;
@@ -20,24 +20,39 @@ top: 58vh;
     font-size: 20px;
     line-height: 25px;
     color: #fff;
+    z-index: 100;
 }
 .formPedidos-container {
     background-color: rgba(26, 26, 26, 0.705);
     position: relative;
     display: flex;
     justify-content: center;
-    top: 65vh;
+    top: 55vh;
     width: 90%;
-    height: 200px;
+    height: 270px;
+}
+.h6Pedido{
+  position: absolute;
+  color: #fff;
+  top: -35px;
+  left: 0;
 }
 .formPedidos {
     position: relative;
-    top: 20px;
+    top: 60px;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: end;
 }
-.button-30 {
+.textareaPedido {
+  resize: none;
+}
+.inputFecha {
+  width: 70%;
+  margin-top: 2px;
+  text-align: center;  
+}
+.button-31 {
     align-items: center;
     appearance: none;
     background-color: #FCFCFD;
@@ -66,7 +81,7 @@ top: 58vh;
     white-space: nowrap;
     will-change: box-shadow,transform;
     font-size: 18px;
-    margin: 10px;
+    margin-top: 20px;
   }
   
   .button-30:focus {
@@ -82,3 +97,23 @@ top: 58vh;
     box-shadow: #D6D6E7 0 3px 7px inset;
     transform: translateY(2px);
   }
+
+  @media screen and (min-width: 600px) {
+    .formPedidos-container {
+      top: 25vh;
+      min-width: 340px;
+      width: 30%;
+      height: 300px;
+  }
+  .formPedidos {
+      height: 200px;
+      top: 50px;
+      padding-top: 20px;
+  }
+  .pedidos-buttonCerrar {
+    display: none;
+}
+.h6Pedido {
+  top:-10px;
+}
+}

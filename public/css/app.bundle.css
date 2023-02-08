@@ -63,6 +63,128 @@ table {
     width: 100%;
     min-height: 100vh;
 }
+/*!**********************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/Components/FormPedidos.css ***!
+  \**********************************************************************************/
+.pedidos-container {
+    position: absolute;
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(36, 36, 36, 0.281);
+    z-index: 200;
+    justify-content: center;
+}
+.pedidos-buttonCerrar {
+    position: absolute;
+    top: calc(55vh + 12px);
+    right: 36px;
+    width: 35px;
+    height: 35px;
+    background-color: transparent;
+    border-radius: 50%;
+    border: solid 3px #fff;
+    font-weight: 800;
+    font-size: 20px;
+    line-height: 25px;
+    color: #fff;
+    z-index: 100;
+}
+.formPedidos-container {
+    background-color: rgba(26, 26, 26, 0.705);
+    position: relative;
+    display: flex;
+    justify-content: center;
+    top: 55vh;
+    width: 90%;
+    height: 270px;
+}
+.h6Pedido{
+  position: absolute;
+  color: #fff;
+  top: -35px;
+  left: 0;
+}
+.formPedidos {
+    position: relative;
+    top: 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+}
+.textareaPedido {
+  resize: none;
+}
+.inputFecha {
+  width: 70%;
+  margin-top: 2px;
+  text-align: center;  
+}
+.button-31 {
+    align-items: center;
+    appearance: none;
+    background-color: #FCFCFD;
+    border-radius: 4px;
+    border-width: 0;
+    box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px,rgba(45, 35, 66, 0.3) 0 7px 13px -3px,#D6D6E7 0 -3px 0 inset;
+    box-sizing: border-box;
+    color: #1d1d1d;
+    cursor: pointer;
+    font-weight: 600;
+    display: inline-flex;
+    height: 48px;
+    justify-content: center;
+    line-height: 1;
+    list-style: none;
+    overflow: hidden;
+    padding-left: 16px;
+    padding-right: 16px;
+    position: relative;
+    text-align: left;
+    text-decoration: none;
+    transition: box-shadow .15s,transform .15s;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    white-space: nowrap;
+    will-change: box-shadow,transform;
+    font-size: 18px;
+    margin-top: 20px;
+  }
+  
+  .button-30:focus {
+    box-shadow: #D6D6E7 0 0 0 1.5px inset, rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+  }
+  
+  .button-30:hover {
+    box-shadow: rgba(45, 35, 66, 0.4) 0 4px 8px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+    transform: translateY(-2px);
+  }
+  
+  .button-30:active {
+    box-shadow: #D6D6E7 0 3px 7px inset;
+    transform: translateY(2px);
+  }
+
+  @media screen and (min-width: 600px) {
+    .formPedidos-container {
+      top: 25vh;
+      min-width: 340px;
+      width: 30%;
+      height: 300px;
+  }
+  .formPedidos {
+      height: 200px;
+      top: 50px;
+      padding-top: 20px;
+  }
+  .pedidos-buttonCerrar {
+    display: none;
+}
+.h6Pedido {
+  top:-10px;
+}
+}
 /*!***********************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js!./src/Layout/Home.css ***!
   \***********************************************************************/
