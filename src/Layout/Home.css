@@ -2,10 +2,11 @@
     position: relative;
     width: 100%;
     min-height: 100vh;
+    overflow: hidden;
 }
 .titulo-container {
     position:relative;
-    top: 45px;
+    top: 35px;
     width: 100%;
 }
 .titulo {
@@ -17,27 +18,33 @@
 }
 .altar-container {
     position: relative;
-    width: 80%;
-    left: 10%;
-    height: 200px;
-    top: 100px;
+    width: 70%;
+    left: 15%;
+    height: 160px;
+    top: 50px;
     display: flex;
     justify-content: center;
 }
 .pent1, .pent2, .gaucho{
     position: absolute;
-    width: 250px;
+    width: 200px;
 }
 .botones-container {
     position: absolute;
-    width: 100%;
-    bottom: 50px;
+    width: calc(100% - 70px);
+    bottom: 35px;
     margin-top: auto;
-    height: 80px;
+    margin-left: 35px;
+    margin-right: 35px;
+    height: 40px;
     top: 0px;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
+}
+.instrucciones {
+    font-weight: 400;
+    font-size: 16px;
 }
 .button-30 {
     align-items: center;
@@ -68,7 +75,7 @@
     white-space: nowrap;
     will-change: box-shadow,transform;
     font-size: 18px;
-    margin: 10px;
+    margin-right: 0px;
   }
   
   .button-30:focus {
@@ -83,6 +90,10 @@
   .button-30:active {
     box-shadow: #D6D6E7 0 3px 7px inset;
     transform: translateY(2px);
+  }
+  .pent1.active {
+    filter: drop-shadow(0 0 40px #ffe600);
+    transition: filter 2s;
   }
 
 @media screen and (min-width: 600px) {
@@ -100,8 +111,17 @@
         top: 100px;
         left: 45%;
     }
+    .pent1, .pent2, .gaucho{
+        position: absolute;
+        width: 250px;
+    }
     .botones-container {
         bottom: 30px;
+        justify-content: center;
+        gap: 20px;
+    }
+    .instrucciones {
+        font-size: 18px;
     }
 }
 

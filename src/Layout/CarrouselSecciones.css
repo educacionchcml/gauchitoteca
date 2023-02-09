@@ -1,0 +1,56 @@
+.carrousel-container{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    top: 45px;
+    left: 0;
+    z-index: 100;
+    overflow-x: scroll;
+    overscroll-behavior-x: contain;
+    scroll-snap-type: x proximity;
+}
+.carrousel-container div:nth-child(1) {
+    background-color: tomato;
+}
+.carrousel-container div:nth-child(2) {
+    background-color: rgb(255, 191, 71);
+}
+.carrousel-container div:nth-child(3) {
+    background-color: rgb(252, 255, 71);
+}
+.carrousel-container div:nth-child(4) {
+    background-color: rgb(255, 92, 71);
+    margin-right: 30px;
+}
+.carrousel-item {
+    margin: 30px 0 30px 30px;
+    padding: 10px;
+    border-radius: 10px;
+    width: 300px;
+    height: 80px;
+}
+.carrousel-item h2 {
+    width: 200px;
+}
+.carrousel-item p {
+    
+}
+
+@media screen and (min-width: 600px) {
+    .carrousel-container {
+        position: absolute;
+        background-color: none;
+        top: 50px;
+        left: 50px;
+        flex-direction: column;
+        width: 2500px;
+        overflow-x: hidden;
+    }
+    .carrousel-item {
+        width: 250px;
+        margin: 10px;
+    }
+    .carrousel-item h2 {
+        width: 200px;
+    }
+}

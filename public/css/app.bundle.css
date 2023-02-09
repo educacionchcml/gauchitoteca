@@ -185,6 +185,65 @@ table {
   top:-10px;
 }
 }
+/*!*************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/Layout/CarrouselSecciones.css ***!
+  \*************************************************************************************/
+.carrousel-container{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    top: 45px;
+    left: 0;
+    z-index: 100;
+    overflow-x: scroll;
+    overscroll-behavior-x: contain;
+    scroll-snap-type: x proximity;
+}
+.carrousel-container div:nth-child(1) {
+    background-color: tomato;
+}
+.carrousel-container div:nth-child(2) {
+    background-color: rgb(255, 191, 71);
+}
+.carrousel-container div:nth-child(3) {
+    background-color: rgb(252, 255, 71);
+}
+.carrousel-container div:nth-child(4) {
+    background-color: rgb(255, 92, 71);
+    margin-right: 30px;
+}
+.carrousel-item {
+    margin: 30px 0 30px 30px;
+    padding: 10px;
+    border-radius: 10px;
+    width: 300px;
+    height: 80px;
+}
+.carrousel-item h2 {
+    width: 200px;
+}
+.carrousel-item p {
+    
+}
+
+@media screen and (min-width: 600px) {
+    .carrousel-container {
+        position: absolute;
+        background-color: none;
+        top: 50px;
+        left: 50px;
+        flex-direction: column;
+        width: 2500px;
+        overflow-x: hidden;
+    }
+    .carrousel-item {
+        width: 250px;
+        margin: 10px;
+    }
+    .carrousel-item h2 {
+        width: 200px;
+    }
+}
 /*!***********************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js!./src/Layout/Home.css ***!
   \***********************************************************************/
@@ -192,10 +251,11 @@ table {
     position: relative;
     width: 100%;
     min-height: 100vh;
+    overflow: hidden;
 }
 .titulo-container {
     position:relative;
-    top: 45px;
+    top: 35px;
     width: 100%;
 }
 .titulo {
@@ -207,27 +267,33 @@ table {
 }
 .altar-container {
     position: relative;
-    width: 80%;
-    left: 10%;
-    height: 200px;
-    top: 100px;
+    width: 70%;
+    left: 15%;
+    height: 160px;
+    top: 50px;
     display: flex;
     justify-content: center;
 }
 .pent1, .pent2, .gaucho{
     position: absolute;
-    width: 250px;
+    width: 200px;
 }
 .botones-container {
     position: absolute;
-    width: 100%;
-    bottom: 50px;
+    width: calc(100% - 70px);
+    bottom: 35px;
     margin-top: auto;
-    height: 80px;
+    margin-left: 35px;
+    margin-right: 35px;
+    height: 40px;
     top: 0px;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
+}
+.instrucciones {
+    font-weight: 400;
+    font-size: 16px;
 }
 .button-30 {
     align-items: center;
@@ -258,7 +324,7 @@ table {
     white-space: nowrap;
     will-change: box-shadow,transform;
     font-size: 18px;
-    margin: 10px;
+    margin-right: 0px;
   }
   
   .button-30:focus {
@@ -273,6 +339,10 @@ table {
   .button-30:active {
     box-shadow: #D6D6E7 0 3px 7px inset;
     transform: translateY(2px);
+  }
+  .pent1.active {
+    filter: drop-shadow(0 0 40px #ffe600);
+    transition: filter 2s;
   }
 
 @media screen and (min-width: 600px) {
@@ -290,8 +360,17 @@ table {
         top: 100px;
         left: 45%;
     }
+    .pent1, .pent2, .gaucho{
+        position: absolute;
+        width: 250px;
+    }
     .botones-container {
         bottom: 30px;
+        justify-content: center;
+        gap: 20px;
+    }
+    .instrucciones {
+        font-size: 18px;
     }
 }
 
