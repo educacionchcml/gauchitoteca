@@ -4,7 +4,7 @@
     flex-direction: row;
     top: 45px;
     left: 0;
-    z-index: 100;
+    z-index: 700;
     overflow-x: scroll;
     overscroll-behavior-x: contain;
     scroll-snap-type: x proximity;
@@ -43,7 +43,7 @@
         top: 50px;
         left: 50px;
         flex-direction: column;
-        width: 2500px;
+        width: 300px;
         overflow-x: hidden;
     }
     .carrousel-item {

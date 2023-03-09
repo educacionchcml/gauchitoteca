@@ -3,22 +3,30 @@ import "./FormPedidos.css"
 import { pedidosCollectionRef } from "../firebase";
 import { doc, setDoc } from "firebase/firestore";
 
-export default function FormPedidos({closeFormPedidos}) {
+export default function FormPedidos({closeFormPedidos, toggleResplandor, obtenerPedidos}) {
 
     const [pedido, setPedido] = useState("");
-    const [fecha, setFecha] = useState(Date.now())
+    const [fecha, setFecha] = useState(Date.now());
+    const [enviado, setEnviado] = useState(false);
 
     function pedidoHandler(e) {
         setPedido(e.target.value);
     }
     async function subirDoc(e) {
-        e.preventDefault()
-        await setDoc(doc(pedidosCollectionRef), {pedido, fecha})
+        e.preventDefault();
+        await setDoc(doc(pedidosCollectionRef), {pedido, fecha}).then(()=>setEnviado(true)).catch((err)=>console.log(err));
+        setTimeout(()=>{
+            obtenerPedidos();
+            toggleResplandor(); 
+            setEnviado(false);
+            closeFormPedidos();
+        }, 2000);
     }
 
     const f = new Date(fecha).toLocaleString("es-AR",  {dateStyle: "long"});
     return(
-        <div className="pedidos-container" onClick={closeFormPedidos}>
+        <div className="pedidos-container">
+            {enviado && <div className="pedidos-confirmacion"><h1>Pedido enviado ✨ </h1></div>}
             <button className="pedidos-buttonCerrar" onClick={closeFormPedidos}>X</button>
                 <div className="formPedidos-container">
                     <form className="formPedidos" onSubmit={(e) => subirDoc(e)}>

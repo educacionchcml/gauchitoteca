@@ -25,6 +25,9 @@
     display: flex;
     justify-content: center;
 }
+.altar-container:hover{
+    cursor: pointer;
+}
 .pent1, .pent2, .gaucho{
     position: absolute;
     width: 200px;
@@ -76,6 +79,7 @@
     will-change: box-shadow,transform;
     font-size: 18px;
     margin-right: 0px;
+    z-index: 400;
   }
   
   .button-30:focus {
