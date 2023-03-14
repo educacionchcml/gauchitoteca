@@ -1,32 +1,18 @@
-import React, { useState, useEffect } from "react";
-import { collection, query, where, getDocs } from "firebase/firestore";
-import { pedidosCollectionRef } from "../firebase";
+import React, { useState } from "react";
 import FormPedidos from "../Components/FormPedidos";
+import Pedidos from "../Components/Pedidos";
 import {useModal} from "./../Hooks/useModal";
 import CarrouselSecciones from "./CarrouselSecciones";
 import "./Home.css";
-import Pedido from "../Components/Pedido";
+
 export function Home (){
     const [isOpenFormPedidos, openFormPedidos, closeFormPedidos] = useModal(false);
     const [resplandor, setResplandor] = useState(false)
-    const [losPedidos, setLosPedidos] = useState();
     const toggleResplandor = () => resplandor ? setResplandor(!resplandor) : setResplandor(!resplandor);
 
-    useEffect(()=>{obtenerPedidos()},[])
-
-    async function obtenerPedidos() {
-        const documentsSnapshots = await getDocs(pedidosCollectionRef);
-        const pedidos = documentsSnapshots.docs.map((pedido)=>({
-            id: pedido.id,
-            pedido: pedido.data().pedido,
-            fecha: pedido.data().fecha
-        }))
-        setLosPedidos(pedidos);
-    }
-    
     return (
         <div className="home-container">
-            {isOpenFormPedidos && <FormPedidos closeFormPedidos={closeFormPedidos} toggleResplandor={toggleResplandor} obtenerPedidos={obtenerPedidos}></FormPedidos>}
+            {isOpenFormPedidos && <FormPedidos closeFormPedidos={closeFormPedidos} toggleResplandor={toggleResplandor}></FormPedidos>}
             <div className="titulo-container">
                 <h1 className="titulo">GAUCHITOTECA</h1>
             </div>
@@ -40,10 +26,7 @@ export function Home (){
                 <p className="instrucciones">Tocá en el botón para pedirle <br></br>o agradecerle al gauchito.</p>
                 <button className="button-30" role="button" onClick={openFormPedidos}>Pedirle</button>
             </div>
-            {losPedidos ? losPedidos.map((pedido, i) => (
-                <Pedido pedido={pedido.pedido} fecha={pedido.fecha}></Pedido>
-            )) : <></>
-            }
+            <Pedidos></Pedidos>
         </div>
     )
 }

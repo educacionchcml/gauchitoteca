@@ -16,7 +16,6 @@ export default function FormPedidos({closeFormPedidos, toggleResplandor, obtener
         e.preventDefault();
         await setDoc(doc(pedidosCollectionRef), {pedido, fecha}).then(()=>setEnviado(true)).catch((err)=>console.log(err));
         setTimeout(()=>{
-            obtenerPedidos();
             toggleResplandor(); 
             setEnviado(false);
             closeFormPedidos();
@@ -25,9 +24,9 @@ export default function FormPedidos({closeFormPedidos, toggleResplandor, obtener
 
     const f = new Date(fecha).toLocaleString("es-AR",  {dateStyle: "long"});
     return(
-        <div className="pedidos-container">
-            {enviado && <div className="pedidos-confirmacion"><h1>Pedido enviado ✨ </h1></div>}
-            <button className="pedidos-buttonCerrar" onClick={closeFormPedidos}>X</button>
+        <div className="pedirle-container">
+            {enviado && <div className="pedirle-confirmacion"><h1>Pedido enviado ✨ </h1></div>}
+            <button className="pedirle-buttonCerrar" onClick={closeFormPedidos}>X</button>
                 <div className="formPedidos-container">
                     <form className="formPedidos" onSubmit={(e) => subirDoc(e)}>
                         <h6 className="h6Pedido">Mi pedido 🙏</h6>

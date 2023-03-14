@@ -6,7 +6,7 @@
 }
 .titulo-container {
     position:relative;
-    top: 35px;
+    top: 25px;
     width: 100%;
 }
 .titulo {
@@ -21,7 +21,7 @@
     width: 70%;
     left: 15%;
     height: 160px;
-    top: 50px;
+    top: 40px;
     display: flex;
     justify-content: center;
 }
@@ -30,7 +30,13 @@
 }
 .pent1, .pent2, .gaucho{
     position: absolute;
-    width: 200px;
+    /*width: 200px;*/
+    width: 150px;
+}
+/*agregada*/
+.pent1 {
+    width: 135px;
+    top: 10px;
 }
 .botones-container {
     position: absolute;

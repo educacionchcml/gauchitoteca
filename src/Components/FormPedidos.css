@@ -1,4 +1,4 @@
-.pedidos-container {
+.pedirle-container {
     position: absolute;
     display: flex;
     width: 100%;
@@ -7,7 +7,7 @@
     z-index: 500;
     justify-content: center;
 }
-.pedidos-buttonCerrar {
+.pedirle-buttonCerrar {
     position: absolute;
     top: calc(55vh + 20px);
     right: calc(5% + 20px);
@@ -29,7 +29,7 @@
     width: 90%;
     height: 270px;
 }
-.pedidos-confirmacion {
+.pedirle-confirmacion {
   position: absolute;
   width: 90%;
   height: 270px;
@@ -39,7 +39,7 @@
   justify-content: start;
   align-items: flex-end;
 }
-.pedidos-confirmacion h1 {
+.pedirle-confirmacion h1 {
   font-size: 20px;
   color: #ed1d23;
   margin: 20px;
@@ -119,13 +119,13 @@
       width: 30%;
       height: 300px;
   }
-  .pedidos-confirmacion {
+  .pedirle-confirmacion {
     top: 25vh;
       min-width: 340px;
       width: 30%;
       height: 300px;
   }
-  .pedidos-confirmacion h1 {
+  .pedirle-confirmacion h1 {
     margin: 40px 55px;
   }
   .formPedidos {
@@ -133,7 +133,7 @@
       top: 50px;
       padding-top: 20px;
   }
-  .pedidos-buttonCerrar {
+  .pedirle-buttonCerrar {
     display: none;
 }
 .h6Pedido {

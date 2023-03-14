@@ -72,32 +72,45 @@ table {
     width: 100%;
     height: 100vh;
     background-color: rgba(36, 36, 36, 0.281);
-    z-index: 200;
+    z-index: 500;
     justify-content: center;
 }
 .pedidos-buttonCerrar {
     position: absolute;
-    top: calc(55vh + 12px);
-    right: 36px;
-    width: 35px;
-    height: 35px;
-    background-color: transparent;
-    border-radius: 50%;
-    border: solid 3px #fff;
-    font-weight: 800;
-    font-size: 20px;
-    line-height: 25px;
+    top: calc(55vh + 20px);
+    right: calc(5% + 20px);
+    width: 30px;
+    height: 30px;
+    border-radius: 3px;
+    background-color: #ed1d23;
     color: #fff;
-    z-index: 100;
+    font-size: 18px;
+    border: none;
+    z-index: 110;
 }
 .formPedidos-container {
-    background-color: rgba(26, 26, 26, 0.705);
+    background-color: rgba(26, 26, 26, 0.87);
     position: relative;
     display: flex;
     justify-content: center;
     top: 55vh;
     width: 90%;
     height: 270px;
+}
+.pedidos-confirmacion {
+  position: absolute;
+  width: 90%;
+  height: 270px;
+  top: 55vh;
+  z-index: 100;
+  display: flex;
+  justify-content: start;
+  align-items: flex-end;
+}
+.pedidos-confirmacion h1 {
+  font-size: 20px;
+  color: #ed1d23;
+  margin: 20px;
 }
 .h6Pedido{
   position: absolute;
@@ -113,6 +126,7 @@ table {
     align-items: end;
 }
 .textareaPedido {
+  margin-top: 10px;
   resize: none;
 }
 .inputFecha {
@@ -173,6 +187,15 @@ table {
       width: 30%;
       height: 300px;
   }
+  .pedidos-confirmacion {
+    top: 25vh;
+      min-width: 340px;
+      width: 30%;
+      height: 300px;
+  }
+  .pedidos-confirmacion h1 {
+    margin: 40px 55px;
+  }
   .formPedidos {
       height: 200px;
       top: 50px;
@@ -194,7 +217,7 @@ table {
     flex-direction: row;
     top: 45px;
     left: 0;
-    z-index: 100;
+    z-index: 700;
     overflow-x: scroll;
     overscroll-behavior-x: contain;
     scroll-snap-type: x proximity;
@@ -233,7 +256,7 @@ table {
         top: 50px;
         left: 50px;
         flex-direction: column;
-        width: 2500px;
+        width: 300px;
         overflow-x: hidden;
     }
     .carrousel-item {
@@ -273,6 +296,9 @@ table {
     top: 50px;
     display: flex;
     justify-content: center;
+}
+.altar-container:hover{
+    cursor: pointer;
 }
 .pent1, .pent2, .gaucho{
     position: absolute;
@@ -325,6 +351,7 @@ table {
     will-change: box-shadow,transform;
     font-size: 18px;
     margin-right: 0px;
+    z-index: 400;
   }
   
   .button-30:focus {
@@ -374,5 +401,118 @@ table {
     }
 }
 
+
+
+/*!*****************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/Components/Pedido.css ***!
+  \*****************************************************************************/
+.pedido-container {
+    width: 120px;
+    z-index: 300;
+    position: absolute;
+    color: rgb(0, 0, 0);
+    background-color: rgba(255, 255, 255, 0.541);
+}
+.pedido-texto {
+    margin: 0px;
+    font-size: 12px;
+}
+.pedido-ofrenda {
+    margin: 0px;
+    position: absolute;
+    bottom: 0;
+    left: 100px;
+    font-size: 24px;
+}
+.pedido-fecha {
+    font-size: 10px;
+    margin: 0px;
+}
+/*!**********************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/Layout/ModalEncabezado.css ***!
+  \**********************************************************************************/
+.encabezado-fondo{
+    position:absolute;
+    background-color: rgba(0, 0, 0, 0.726);
+    width: 100%;
+    height: 100vh;
+    top:0;
+    z-index: 1000;
+    animation-name: opac;
+    animation-duration: 1s;
+}
+@keyframes opac {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+.encabezado-fondo.cerrando {
+    animation-name: cerrando;
+    animation-duration: 1s;
+}
+@keyframes cerrando {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+.encabezado-container{
+    position: relative;
+    width: 80%;
+    left: 10%;
+    height: calc(100vh - 200px);
+    top: 80px;
+    padding-top: 20px;
+    background-color: antiquewhite;
+}
+
+.encabezado-container button {
+    position: fixed;
+    right: calc(10% + 20px);
+    width: 30px;
+    height: 30px;
+    border-radius: 3px;
+    background-color: #ed1d23;
+    color:antiquewhite;
+    font-size: 20px;
+    padding-bottom: 10px;
+    border: none;
+    z-index: 110;
+}
+.encabezado-textos {
+    position: relative;
+    top: 0px;
+    height: 95%;
+    overflow-y: scroll;
+}
+.encabezado-textos h2 {
+    margin: 0 20px;
+    font-size: 28px;
+}
+.encabezado-textos h3 {
+    margin: 0 20px;
+}
+.encabezado-textos p {
+    margin: 20px;
+}
+
+@media screen and (min-width: 600px) {
+    .encabezado-container{
+        position: relative;
+        width: 60%;
+        left: 20%;
+    }
+    .encabezado-textos {
+        overflow-y: visible;
+    }
+    .encabezado-container button {
+        right: calc(20% + 20px);
+    }
+}
 
 

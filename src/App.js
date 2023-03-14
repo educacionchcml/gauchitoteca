@@ -4,7 +4,6 @@ import "./App.css";
 import { Home } from "./Layout/Home";
 import { useModal } from "./Hooks/useModal";
 import ModalEncabezado from "./Layout/ModalEncabezado";
-import Pedido from "./Components/Pedido";
 
 function App() {
     const [isOpenEncabezado, openEncabezado, closeEncabezado] = useModal(false);
@@ -13,7 +12,6 @@ function App() {
     return(
         <div className="app-container">
             {isOpenEncabezado && <ModalEncabezado closeEncabezado={closeEncabezado}></ModalEncabezado>}
-            <Pedido></Pedido>
             <Home></Home>
         </div>
     )
