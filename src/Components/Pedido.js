@@ -27,8 +27,10 @@ export default function Pedido({duracionAnimacion, delayItem, pedido, fecha}) {
     const ofrendas = ["🍾","🪗","🚬 ","🕯️","🌹","🌈 "];
     const ofrendaRandom =  Math.floor(Math.random() * ofrendas.length);
 
+    //<div className="pedido-container" style={{animation: ("display " + duracionAnimacion + "s infinite "), animationDelay: (delayItem + "s"), zIndex: delayItem + 100}}></div>
+
     return(
-        <div className="pedido-container" style={{animation: "display " + duracionAnimacion + "s infinite ", animationDelay: delayItem + "s"}}>
+        <div className="pedido-container" style={{animationDuration: duracionAnimacion + "s", animationDelay: delayItem + "s"}}>
             <p className="pedido-ofrenda">{ofrendas[ofrendaRandom]}</p>
             <p className="pedido-fecha">{date}</p>
             <p className="pedido-texto">{pedido}</p>

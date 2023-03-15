@@ -4,6 +4,7 @@ import "./App.css";
 import { Home } from "./Layout/Home";
 import { useModal } from "./Hooks/useModal";
 import ModalEncabezado from "./Layout/ModalEncabezado";
+import Audios from "./Secciones/Audios";
 
 function App() {
     const [isOpenEncabezado, openEncabezado, closeEncabezado] = useModal(false);
@@ -12,6 +13,7 @@ function App() {
     return(
         <div className="app-container">
             {isOpenEncabezado && <ModalEncabezado closeEncabezado={closeEncabezado}></ModalEncabezado>}
+            <Audios></Audios>
             <Home></Home>
         </div>
     )
