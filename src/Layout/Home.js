@@ -1,32 +1,50 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useContext } from "react";
+import { Routes, Route, useNavigate } from "react-router-dom";
 import FormPedidos from "../Components/FormPedidos";
-import Pedidos from "../Components/Pedidos";
-import {useModal} from "./../Hooks/useModal";
+import { useModal } from "./../Hooks/useModal";
 import CarrouselSecciones from "./CarrouselSecciones";
+import { GlobalContext } from "../Contexts/GlobalContext";
+import ModalEncabezado from "./ModalEncabezado";
+import Audios from "../Secciones/Audios";
+import Arte from "../Secciones/Arte";
+import Publicaciones from "../Secciones/Publicaciones";
+import Santuarios from "../Secciones/Santuarios";
+import Altar from "../Secciones/Altar";
 import "./Home.css";
 
 export function Home (){
+    const global = useContext(GlobalContext);
+    const [isOpenEncabezado, openEncabezado, closeEncabezado] = useModal(false);
     const [isOpenFormPedidos, openFormPedidos, closeFormPedidos] = useModal(false);
-    const [resplandor, setResplandor] = useState(false)
-    const toggleResplandor = () => resplandor ? setResplandor(!resplandor) : setResplandor(!resplandor);
+    const [rutaSeccion, setRutaSeccion] = useState("");
 
+    useEffect(()=>{ 
+        if(global.primeraVez) {
+            setTimeout(()=> openEncabezado(), 1000);
+            global.setPrimeraVez(false);
+        }},[]);
+    const navigate = useNavigate()
+    const mostrarAltar = () => {
+        navigate("/");
+        setRutaSeccion("");
+    }
+        
     return (
         <div className="home-container">
-            {isOpenFormPedidos && <FormPedidos closeFormPedidos={closeFormPedidos} toggleResplandor={toggleResplandor}></FormPedidos>}
-            <div className="titulo-container">
-                <h1 className="titulo">GAUCHITOTECA</h1>
-            </div>
-            <CarrouselSecciones></CarrouselSecciones>
-            <div onClick={()=>toggleResplandor()} className="altar-container">
-                <img className={`pent1 ${resplandor && `active`}`} src="https://firebasestorage.googleapis.com/v0/b/gauchitoteca.appspot.com/o/layout%2Fgauchitoteca%20altar2-03.png?alt=media&token=7c39669e-b4b5-42a7-aafb-4a10dd90a515"></img>
-                <img className="pent2" src="https://firebasestorage.googleapis.com/v0/b/gauchitoteca.appspot.com/o/layout%2Fgauchitoteca%20altar2-04.png?alt=media&token=54776407-3a9a-479b-86f5-c296a2028045"></img>
-                <img className="gaucho" src="https://firebasestorage.googleapis.com/v0/b/gauchitoteca.appspot.com/o/layout%2Fgauchitoteca%20altar2-05.png?alt=media&token=5fe477c4-efb0-4fb1-977b-ff558ad20c9e"></img>
-            </div>
-            <div className="botones-container">
-                <p className="instrucciones">Tocá en el botón para pedirle <br></br>o agradecerle al gauchito.</p>
-                <button className="button-30" role="button" onClick={openFormPedidos}>Pedirle</button>
-            </div>
-            <Pedidos></Pedidos>
+            {isOpenEncabezado && <ModalEncabezado closeEncabezado={closeEncabezado}></ModalEncabezado>}
+            {isOpenFormPedidos && <FormPedidos closeFormPedidos={closeFormPedidos}></FormPedidos>}
+            <div onClick={()=>mostrarAltar()} className="titulo-container"><h1 className="titulo">GAUCHITOTECA</h1></div>
+                <CarrouselSecciones></CarrouselSecciones>
+                <div className="secciones-container">
+                {rutaSeccion != "" ? <div className="tituloSeccion-container"><h2 className="tituloSeccion">{rutaSeccion.slice(1).charAt(0).toUpperCase() + rutaSeccion.slice(2)}</h2></div> : <></>}
+                    <Routes>
+                        <Route path="/" element={<Altar openFormPedidos={openFormPedidos} setRutaSeccion={setRutaSeccion}/>}/>
+                        <Route path="/audios" element={<Audios setRutaSeccion={setRutaSeccion}/>}/>
+                        <Route path="/arte" element={<Arte setRutaSeccion={setRutaSeccion}/>}></Route>
+                        <Route path="/publicaciones" element={<Publicaciones setRutaSeccion={setRutaSeccion}/>}></Route>
+                        <Route path="/santuarios" element={<Santuarios setRutaSeccion={setRutaSeccion}/>}></Route>
+                    </Routes>       
+                </div>
         </div>
     )
 }

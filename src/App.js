@@ -1,21 +1,18 @@
-import React, {useEffect} from "react";
+import React from "react";
 import "./App.css";
-//import {db} from "./firebase";
 import { Home } from "./Layout/Home";
-import { useModal } from "./Hooks/useModal";
-import ModalEncabezado from "./Layout/ModalEncabezado";
-import Audios from "./Secciones/Audios";
+import GlobalContext from "./Contexts/GlobalContext";
+import { BrowserRouter as Router } from "react-router-dom";
 
 function App() {
-    const [isOpenEncabezado, openEncabezado, closeEncabezado] = useModal(false);
-    useEffect(()=>{setTimeout(()=> openEncabezado(), 1000)},[]);
-    
     return(
-        <div className="app-container">
-            {isOpenEncabezado && <ModalEncabezado closeEncabezado={closeEncabezado}></ModalEncabezado>}
-            <Audios></Audios>
-            <Home></Home>
-        </div>
+        <GlobalContext>    
+            <div className="app-container">
+                <Router>
+                    <Home/>
+                </Router>
+            </div>
+        </GlobalContext>
     )
 }
 

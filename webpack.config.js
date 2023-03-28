@@ -16,9 +16,11 @@ module.exports = {
     output : {
         path: path.resolve(__dirname, 'build'),
         filename: '[name].bundle.js',
+        publicPath: '/'
     },
     devServer: {
         port: 4000,
+        historyApiFallback: true,
     },
     performance: { hints: false },
     optimization: {

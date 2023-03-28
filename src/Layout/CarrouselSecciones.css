@@ -2,7 +2,7 @@
     position: relative;
     display: flex;
     flex-direction: row;
-    top: 30px;
+    margin-top: 30px;
     left: 0;
     z-index: 700;
     overflow-x: scroll;
@@ -28,6 +28,9 @@
     border-radius: 10px;
     width: 300px;
     height: 80px;
+}
+.carrousel-item:hover{
+    cursor: pointer;
 }
 .carrousel-item h2 {
     width: 200px;
