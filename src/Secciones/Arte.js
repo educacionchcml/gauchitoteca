@@ -8,7 +8,9 @@ export default function Arte({setRutaSeccion}) {
         setRutaSeccion(location.pathname);
     },[])
     return (
-        <></>
+        <>
+        <h6>[Aqui irian las expresiones artisticas]</h6>
+        </>
     )
 }
 

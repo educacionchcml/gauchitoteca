@@ -20,6 +20,7 @@ export default function Pedidos() {
 
     return (
         <div className="pedidos-container">
+            <h6>[Aqui se mostrarían los pedidos y agradecimientos de ls usuarios]</h6>
             {losPedidos ? losPedidos.map((pedido, i) => (
                 <Pedido key={i} duracionAnimacion={(losPedidos.length + 1) * 3} delayItem={(i + 1) * 3} pedido={pedido.pedido} fecha={pedido.fecha}></Pedido>
             )) : <></>

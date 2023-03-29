@@ -8,6 +8,8 @@ export default function Santuarios({setRutaSeccion}) {
         setRutaSeccion(location.pathname);
     },[])
     return (
-        <></>
+        <>
+        <h6>[Aqui iria galeria de imagenes]</h6>
+        </>
     );
 }

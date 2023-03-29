@@ -1,0 +1,23 @@
+.elPdf-container {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    top: -240px;
+    left: -30px;
+    margin: 0;
+    z-index: 700;
+}
+.elPdf-iframe {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    z-index: 800;
+}
+.elPdf-cerrar {
+    position: absolute;
+    top: 40px;
+    left: 40px;
+    width: 60px;
+    height: 60px;
+    z-index: 900;
+}

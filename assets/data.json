@@ -1,0 +1,54 @@
+{
+            "publicaciones": [
+                {
+                    "id": 1, 
+                    "titulo": "De Antonio Mamerto a Gauchito Gil: Estrategias de control y formas de resistencia popular en una región de frontera entre Argentina y Brasil",
+                    "link": "https://firebasestorage.googleapis.com/v0/b/gauchitoteca.appspot.com/o/publicaciones%2FMartins%20De%20Antonio%20Mamerto%20A%20Gauchito%20Gil%20Estragegias%20De%20Control.pdf?alt=media&token=c7eb658d-d4c6-4e40-8104-da787b20e56e"
+                },
+                {
+                    "id": 2, 
+                    "titulo": "“Mi Gauchito Gil”: Musical Reflections on a Folk Saint",
+                    "link": "https://firebasestorage.googleapis.com/v0/b/gauchitoteca.appspot.com/o/publicaciones%2FMi-Gauchito-Gil-Musical-Reflections.pdf?alt=media&token=2440e9fe-a9ef-467b-9b14-20990adb15f0"
+                },
+                {
+                    "id": 3, 
+                    "titulo": "La santidad popular de los bandidos",
+                    "link": "https://firebasestorage.googleapis.com/v0/b/gauchitoteca.appspot.com/o/publicaciones%2FSantidad%20popular%20bandidos%20Gauchito%20Gil%20tesis%20MA%20mexicano.pdf?alt=media&token=57fa49a1-ef52-4668-8042-24b14f6fff84"
+                },
+                {
+                    "id": 4, 
+                    "titulo": "...",
+                    "link": "https://firebasestorage.googleapis.com/v0/b/gauchitoteca.appspot.com/o/publicaciones%2FSantidad%20popular%20bandidos%20Gauchito%20Gil%20tesis%20MA%20mexicano.pdf?alt=media&token=57fa49a1-ef52-4668-8042-24b14f6fff84"   
+                }                
+            ],
+            "audios": [
+                {
+                    "id": 1,
+                    "entrevistado": "Selva Vera",
+                    "titulo": "Presentacion",
+                    "recopilador": "Juan Pablo Romero",
+                    "link": "https://firebasestorage.googleapis.com/v0/b/gauchitoteca.appspot.com/o/audios%2F1-%20Selva%20Vera%20Presentaci%C3%B3n.mp3?alt=media&token=4ac55a24-001a-4b6e-9c6f-8a27c1ed087c"
+                },
+                {
+                    "id": 2,
+                    "entrevistado": "Selva Vera",
+                    "titulo": "Milagros I",
+                    "recopilador": "Juan Pablo Romero",
+                    "link": "https://firebasestorage.googleapis.com/v0/b/gauchitoteca.appspot.com/o/audios%2F3-%20Selva%20Vera%20Milagros%20I.mp3?alt=media&token=b562694b-24b6-406c-8511-d8eccd67e160"
+                },
+                {
+                    "id": 3,
+                    "entrevistado": "Selva Vera",
+                    "titulo": "Milagros II",
+                    "recopilador": "Juan Pablo Romero",
+                    "link": "https://firebasestorage.googleapis.com/v0/b/gauchitoteca.appspot.com/o/audios%2F4-%20Selva%20Vera%20Milagro%20II.mp3?alt=media&token=74cd7088-2e8d-4091-b157-d620ca644163"
+                },
+                {
+                    "id": 4,
+                    "entrevistado": "Selva Vera",
+                    "titulo": "Milagros III",
+                    "recopilador": "Juan Pablo Romero",
+                    "link": "https://firebasestorage.googleapis.com/v0/b/gauchitoteca.appspot.com/o/audios%2F5-%20Selva%20Vera%20Milagro%20III.mp3?alt=media&token=910bb71f-2657-4c7c-9b19-8c8e0cfbe9eb"
+                }
+            ]
+}
