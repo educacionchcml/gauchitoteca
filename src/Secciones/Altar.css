@@ -86,19 +86,25 @@
 
   @media screen and (min-width: 600px) {
     .altar-container {
-        width: 10%;
-        height: 200px;
-        top: 100px;
-        left: 45%;
+      position: absolute;
+      top: 0;
+      width: 100vw;
+      height: 400px;
+      left: -350px;
     }
     .pent1, .pent2, .gaucho{
-        position: absolute;
-        width: 250px;
+      position: absolute;
+      width: 200px;
     }
     .botones-container {
-        bottom: 30px;
-        justify-content: center;
-        gap: 20px;
+      position: absolute;
+      justify-content: center;
+      margin-top: 0px;
+      height: 500px;
+      top:inherit;
+      gap: 20px;
+      width: 100vw;
+      left: -350px;
     }
     .instrucciones {
         font-size: 18px;

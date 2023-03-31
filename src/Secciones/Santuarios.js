@@ -9,7 +9,10 @@ export default function Santuarios({setRutaSeccion}) {
     },[])
     return (
         <>
+        <div className="seccion-container">
         <h6>[Aqui iria galeria de imagenes]</h6>
+        </div>
+        
         </>
     );
 }

@@ -24,7 +24,7 @@ export default function FormPedidos({closeFormPedidos, toggleResplandor, obtener
 
     const f = new Date(fecha).toLocaleString("es-AR",  {dateStyle: "long"});
     return(
-        <div className="pedirle-container">
+        <div className="pedirle-container" onClick={closeFormPedidos}>
             {enviado && <div className="pedirle-confirmacion"><h1>Pedido enviado ✨ </h1></div>}
             <button className="pedirle-buttonCerrar" onClick={closeFormPedidos}>X</button>
                 <div className="formPedidos-container">

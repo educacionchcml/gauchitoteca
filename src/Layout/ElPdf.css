@@ -15,9 +15,32 @@
 }
 .elPdf-cerrar {
     position: absolute;
+    background-color: #ed1d23;
+    color: #fff;
+    font-size: 30px;
+    font-weight: 900;
     top: 40px;
     left: 40px;
     width: 60px;
-    height: 60px;
+    height: 40px;
     z-index: 900;
+    border: none;
+    border-radius: 5px;
+}
+.elPdf-cerrar:hover{
+    cursor: pointer;
+}
+
+@media screen and (min-width: 600px) {
+    .elPdf-iframe {
+        position: relative;
+        top: 200px;
+        width: 50%;
+        height: 400px;
+    }
+    .elPdf-cerrar {
+        position: absolute;
+        top: 550px;
+        left: calc(50% - 85px);
+    }
 }

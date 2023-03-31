@@ -112,31 +112,40 @@
     transform: translateY(2px);
   }
 
+  .pedirle-buttonCerrar {
+    cursor: pointer;
+  }
+
   @media screen and (min-width: 600px) {
+    .pedirle-container {
+      cursor:pointer;
+    }
     .formPedidos-container {
       top: 25vh;
       min-width: 340px;
       width: 30%;
       height: 300px;
-  }
-  .pedirle-confirmacion {
-    top: 25vh;
+   }
+   .pedirle-confirmacion {
+     top: 25vh;
       min-width: 340px;
       width: 30%;
       height: 300px;
   }
   .pedirle-confirmacion h1 {
-    margin: 40px 55px;
+      margin: 40px 55px;
   }
   .formPedidos {
       height: 200px;
       top: 50px;
       padding-top: 20px;
   }
-  .pedirle-buttonCerrar {
-    display: none;
-}
-.h6Pedido {
-  top:-10px;
-}
+    .pedirle-buttonCerrar {
+      position: absolute;
+      top:calc(25vh + 10px);
+      left: calc(65% - 40px);
+  }
+    .h6Pedido {
+    top:-10px;
+  }
 }

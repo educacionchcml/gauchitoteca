@@ -12,8 +12,11 @@ export default function Audios({setRutaSeccion}) {
     const global = useContext(GlobalContext);
     return (
     <>  
+    <div className="seccion-container">
+
         <h6>[Aqui irian audios con referencias]</h6>
         <audio src={audio1} controls></audio>
+    </div>
     </>
     )
 }

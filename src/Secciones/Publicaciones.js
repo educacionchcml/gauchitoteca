@@ -16,7 +16,7 @@ export default function Publicaciones ({setRutaSeccion}) {
 
     return(
         <>
-            <div>{data.publicaciones.map((pub, i)=>{
+            <div className="publicaciones-container seccion-container">{data.publicaciones.map((pub, i)=>{
                 return(<Publicacion key={i} titulo={pub.titulo} link={pub.link} openPdf={openPdf} setLinkPdf={setLinkPdf}></Publicacion>)
             })}</div>
             <>{isOpenPdf && <ElPdf closePdf={closePdf} linkPdf={linkPdf}></ElPdf>}</>

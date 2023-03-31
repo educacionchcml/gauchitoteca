@@ -1,0 +1,9 @@
+.seccion-container {
+    margin-left: 0px;
+}
+
+@media screen and (min-width: 600px) {
+    .seccion-container {
+        margin-left: 60px;
+    }
+}

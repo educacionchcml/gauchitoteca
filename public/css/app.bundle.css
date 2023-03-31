@@ -55,6 +55,10 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
+h6 {
+	margin-top: 20px;
+	margin-bottom: 10px;
+}
 /*!***************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js!./src/App.css ***!
   \***************************************************************/
@@ -66,7 +70,7 @@ table {
 /*!**********************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js!./src/Components/FormPedidos.css ***!
   \**********************************************************************************/
-.pedidos-container {
+.pedirle-container {
     position: absolute;
     display: flex;
     width: 100%;
@@ -75,7 +79,7 @@ table {
     z-index: 500;
     justify-content: center;
 }
-.pedidos-buttonCerrar {
+.pedirle-buttonCerrar {
     position: absolute;
     top: calc(55vh + 20px);
     right: calc(5% + 20px);
@@ -97,7 +101,7 @@ table {
     width: 90%;
     height: 270px;
 }
-.pedidos-confirmacion {
+.pedirle-confirmacion {
   position: absolute;
   width: 90%;
   height: 270px;
@@ -107,7 +111,7 @@ table {
   justify-content: start;
   align-items: flex-end;
 }
-.pedidos-confirmacion h1 {
+.pedirle-confirmacion h1 {
   font-size: 20px;
   color: #ed1d23;
   margin: 20px;
@@ -180,33 +184,42 @@ table {
     transform: translateY(2px);
   }
 
+  .pedirle-buttonCerrar {
+    cursor: pointer;
+  }
+
   @media screen and (min-width: 600px) {
+    .pedirle-container {
+      cursor:pointer;
+    }
     .formPedidos-container {
       top: 25vh;
       min-width: 340px;
       width: 30%;
       height: 300px;
-  }
-  .pedidos-confirmacion {
-    top: 25vh;
+   }
+   .pedirle-confirmacion {
+     top: 25vh;
       min-width: 340px;
       width: 30%;
       height: 300px;
   }
-  .pedidos-confirmacion h1 {
-    margin: 40px 55px;
+  .pedirle-confirmacion h1 {
+      margin: 40px 55px;
   }
   .formPedidos {
       height: 200px;
       top: 50px;
       padding-top: 20px;
   }
-  .pedidos-buttonCerrar {
-    display: none;
-}
-.h6Pedido {
-  top:-10px;
-}
+    .pedirle-buttonCerrar {
+      position: absolute;
+      top:calc(25vh + 10px);
+      left: calc(65% - 40px);
+  }
+    .h6Pedido {
+    top:-10px;
+  }
 }
 /*!*************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js!./src/Layout/CarrouselSecciones.css ***!
@@ -215,7 +228,7 @@ table {
     position: relative;
     display: flex;
     flex-direction: row;
-    top: 45px;
+    margin-top: 30px;
     left: 0;
     z-index: 700;
     overflow-x: scroll;
@@ -236,11 +249,14 @@ table {
     margin-right: 30px;
 }
 .carrousel-item {
-    margin: 30px 0 30px 30px;
+    margin: 20px 0 20px 30px;
     padding: 10px;
     border-radius: 10px;
     width: 300px;
     height: 80px;
+}
+.carrousel-item:hover{
+    cursor: pointer;
 }
 .carrousel-item h2 {
     width: 200px;
@@ -266,167 +282,6 @@ table {
     .carrousel-item h2 {
         width: 200px;
     }
-}
-/*!***********************************************************************!*\
-  !*** css ./node_modules/css-loader/dist/cjs.js!./src/Layout/Home.css ***!
-  \***********************************************************************/
-.home-container {
-    position: relative;
-    width: 100%;
-    min-height: 100vh;
-    overflow: hidden;
-}
-.titulo-container {
-    position:relative;
-    top: 35px;
-    width: 100%;
-}
-.titulo {
-    margin: 0;
-    text-align: center;
-    font-size: 40px;
-    font-weight: 800;
-    color: #fff;
-}
-.altar-container {
-    position: relative;
-    width: 70%;
-    left: 15%;
-    height: 160px;
-    top: 50px;
-    display: flex;
-    justify-content: center;
-}
-.altar-container:hover{
-    cursor: pointer;
-}
-.pent1, .pent2, .gaucho{
-    position: absolute;
-    width: 200px;
-}
-.botones-container {
-    position: absolute;
-    width: calc(100% - 70px);
-    bottom: 35px;
-    margin-top: auto;
-    margin-left: 35px;
-    margin-right: 35px;
-    height: 40px;
-    top: 0px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-.instrucciones {
-    font-weight: 400;
-    font-size: 16px;
-}
-.button-30 {
-    align-items: center;
-    appearance: none;
-    background-color: #FCFCFD;
-    border-radius: 4px;
-    border-width: 0;
-    box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px,rgba(45, 35, 66, 0.3) 0 7px 13px -3px,#D6D6E7 0 -3px 0 inset;
-    box-sizing: border-box;
-    color: #1d1d1d;
-    cursor: pointer;
-    font-weight: 600;
-    display: inline-flex;
-    height: 48px;
-    justify-content: center;
-    line-height: 1;
-    list-style: none;
-    overflow: hidden;
-    padding-left: 16px;
-    padding-right: 16px;
-    position: relative;
-    text-align: left;
-    text-decoration: none;
-    transition: box-shadow .15s,transform .15s;
-    user-select: none;
-    -webkit-user-select: none;
-    touch-action: manipulation;
-    white-space: nowrap;
-    will-change: box-shadow,transform;
-    font-size: 18px;
-    margin-right: 0px;
-    z-index: 400;
-  }
-  
-  .button-30:focus {
-    box-shadow: #D6D6E7 0 0 0 1.5px inset, rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
-  }
-  
-  .button-30:hover {
-    box-shadow: rgba(45, 35, 66, 0.4) 0 4px 8px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
-    transform: translateY(-2px);
-  }
-  
-  .button-30:active {
-    box-shadow: #D6D6E7 0 3px 7px inset;
-    transform: translateY(2px);
-  }
-  .pent1.active {
-    filter: drop-shadow(0 0 40px #ffe600);
-    transition: filter 2s;
-  }
-
-@media screen and (min-width: 600px) {
-    .titulo {
-        font-size: 70px;
-    }
-    .titulo-container {
-        top: 50px;
-        left: calc(50% - 250px);
-        width: 500px;
-    }
-    .altar-container {
-        width: 10%;
-        height: 200px;
-        top: 100px;
-        left: 45%;
-    }
-    .pent1, .pent2, .gaucho{
-        position: absolute;
-        width: 250px;
-    }
-    .botones-container {
-        bottom: 30px;
-        justify-content: center;
-        gap: 20px;
-    }
-    .instrucciones {
-        font-size: 18px;
-    }
-}
-
-
-
-/*!*****************************************************************************!*\
-  !*** css ./node_modules/css-loader/dist/cjs.js!./src/Components/Pedido.css ***!
-  \*****************************************************************************/
-.pedido-container {
-    width: 120px;
-    z-index: 300;
-    position: absolute;
-    color: rgb(0, 0, 0);
-    background-color: rgba(255, 255, 255, 0.541);
-}
-.pedido-texto {
-    margin: 0px;
-    font-size: 12px;
-}
-.pedido-ofrenda {
-    margin: 0px;
-    position: absolute;
-    bottom: 0;
-    left: 100px;
-    font-size: 24px;
-}
-.pedido-fecha {
-    font-size: 10px;
-    margin: 0px;
 }
 /*!**********************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js!./src/Layout/ModalEncabezado.css ***!
@@ -514,5 +369,349 @@ table {
         right: calc(20% + 20px);
     }
 }
+
+
+/*!**************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/Secciones/Arte.css ***!
+  \**************************************************************************/
+.seccion-container {
+    margin-left: 0px;
+}
+
+@media screen and (min-width: 600px) {
+    .seccion-container {
+        margin-left: 60px;
+    }
+}
+
+/*!***********************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/Secciones/Publicaciones.css ***!
+  \***********************************************************************************/
+
+/*!**********************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/Components/Publicacion.css ***!
+  \**********************************************************************************/
+.publicacion-container{
+    position: relative;
+    margin-top: 20px;
+    height: 70px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.publicacion-container:hover {
+    cursor: pointer;
+}
+.publicacion-container img {
+    width: 50px;
+    height: 50px;
+    left: 10px;
+    top: 10px;
+}
+
+.publicacion-container p {
+    margin-left: 15px;
+}
+
+
+/*!************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/Layout/ElPdf.css ***!
+  \************************************************************************/
+.elPdf-container {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    top: -240px;
+    left: -30px;
+    margin: 0;
+    z-index: 700;
+}
+.elPdf-iframe {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    z-index: 800;
+}
+.elPdf-cerrar {
+    position: absolute;
+    background-color: #ed1d23;
+    color: #fff;
+    font-size: 30px;
+    font-weight: 900;
+    top: 40px;
+    left: 40px;
+    width: 60px;
+    height: 40px;
+    z-index: 900;
+    border: none;
+    border-radius: 5px;
+}
+.elPdf-cerrar:hover{
+    cursor: pointer;
+}
+
+@media screen and (min-width: 600px) {
+    .elPdf-iframe {
+        position: relative;
+        top: 200px;
+        width: 50%;
+        height: 400px;
+    }
+    .elPdf-cerrar {
+        position: absolute;
+        top: 550px;
+        left: calc(50% - 85px);
+    }
+}
+/*!********************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/Secciones/Santuarios.css ***!
+  \********************************************************************************/
+
+/*!***************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/Secciones/Altar.css ***!
+  \***************************************************************************/
+
+.altar-container {
+    position: relative;
+    width: 70%;
+    height: calc(100% - 100px);
+    left: 15%;
+    top: 40px;
+    display: flex;
+    justify-content: center;
+}
+.altar-container:hover{
+    cursor: pointer;
+}
+.pent1, .pent2, .gaucho{
+    position: absolute;
+    width: 150px;
+}
+
+.botones-container {
+    position: relative;
+    width: calc(100% - 20px);
+    bottom: 35px;
+    margin-top: auto;
+    margin-left: 10px;
+    margin-right: 10px;
+    height: 40px;
+    top: 0px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.instrucciones {
+    font-weight: 400;
+    font-size: 16px;
+}
+.button-30 {
+    align-items: center;
+    appearance: none;
+    background-color: #FCFCFD;
+    border-radius: 4px;
+    border-width: 0;
+    box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px,rgba(45, 35, 66, 0.3) 0 7px 13px -3px,#D6D6E7 0 -3px 0 inset;
+    box-sizing: border-box;
+    color: #1d1d1d;
+    cursor: pointer;
+    font-weight: 600;
+    display: inline-flex;
+    height: 48px;
+    justify-content: center;
+    line-height: 1;
+    list-style: none;
+    overflow: hidden;
+    padding-left: 16px;
+    padding-right: 16px;
+    position: relative;
+    text-align: left;
+    text-decoration: none;
+    transition: box-shadow .15s,transform .15s;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    white-space: nowrap;
+    will-change: box-shadow,transform;
+    font-size: 18px;
+    margin-right: 0px;
+    z-index: 400;
+  }
+  
+  .button-30:focus {
+    box-shadow: #D6D6E7 0 0 0 1.5px inset, rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+  }
+  
+  .button-30:hover {
+    box-shadow: rgba(45, 35, 66, 0.4) 0 4px 8px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+    transform: translateY(-2px);
+  }
+  
+  .button-30:active {
+    box-shadow: #D6D6E7 0 3px 7px inset;
+    transform: translateY(2px);
+  }
+  .pent1.active {
+    filter: drop-shadow(0 0 40px #ffe600);
+    transition: filter 2s;
+  }
+
+  @media screen and (min-width: 600px) {
+    .altar-container {
+      position: absolute;
+      top: 0;
+      width: 100vw;
+      height: 400px;
+      left: -350px;
+    }
+    .pent1, .pent2, .gaucho{
+      position: absolute;
+      width: 200px;
+    }
+    .botones-container {
+      position: absolute;
+      justify-content: center;
+      margin-top: 0px;
+      height: 500px;
+      top:inherit;
+      gap: 20px;
+      width: 100vw;
+      left: -350px;
+    }
+    .instrucciones {
+        font-size: 18px;
+    }
+  }
+/*!*****************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/Components/Pedido.css ***!
+  \*****************************************************************************/
+@keyframes display {
+    0% {
+      transform: translateX(-1100px) translateY(0px);
+      opacity: 0;
+    }
+    50% {
+      transform: translateX(0) translateY(0px);
+      opacity: 1;
+    }
+    100% {
+      transform: translateX(1100px) translateY(0px);
+      opacity: 0;
+    }
+  }
+
+.pedido-container {
+    width: 200px;
+    z-index: 300;
+    color: rgb(0, 0, 0);
+    background-color: antiquewhite;
+    height: 60px;
+    overflow-y: hidden;
+    position: absolute;
+    top: 0;
+    left: calc(50% - 100px);
+    opacity: 0;
+    animation: display infinite ease;
+}
+.pedido-texto {
+    margin: 5px;
+    font-size: 12px;
+}
+.pedido-ofrenda {
+    margin: 5px;
+    /*position: absolute;*/
+    top: 0px;
+    float: right;
+    font-size: 24px;
+}
+.pedido-fecha {
+    font-size: 10px;
+    margin: 5px;
+}
+
+/*!******************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/Components/Pedidos.css ***!
+  \******************************************************************************/
+.pedidos-container {
+    position: absolute;
+    height: 200px;
+    width: 100%;
+    bottom: -10px;
+    text-align: center;
+}
+
+@media screen and (min-width: 600px) {
+    .pedidos-container {
+        position: absolute;
+      top: 270px;
+      width: 50vw;
+      overflow: hidden;
+      height: 400px;
+      left: calc(50vw -400px) ;
+    }
+
+    
+}
+  
+/*!***********************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/Layout/Home.css ***!
+  \***********************************************************************/
+.home-container {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    overflow: hidden;
+}
+.titulo-container {
+    position:relative;
+    top: 25px;
+    width: 100%;
+}
+.titulo-container:hover {
+    cursor: pointer;
+}
+.titulo {
+    margin: 0;
+    text-align: center;
+    font-size: 40px;
+    font-weight: 800;
+    color: #fff;
+}
+.secciones-container {
+    position: relative;
+    width: calc(100% -  60px);
+    margin-left: 30px;
+    margin-top: 30px;
+    height: calc(100vh - 260px);
+}
+.tituloSeccion-container{
+    position: relative;
+}
+.tituloSeccion {
+    font-size: 30px;
+    color: #fff;
+}
+
+@media screen and (min-width: 600px) {
+    .titulo {
+        font-size: 70px;
+    }
+    .titulo-container {
+        top: 50px;
+        left: calc(50% - 250px);
+        width: 500px;
+    }
+    .secciones-container {
+        position: absolute;
+        width: calc(100vw - 400px);
+        top: 120px;
+        left: 350px;
+        margin-left: 0px;
+    }
+    .tituloSeccion-container {
+        margin-left: 60px;
+    }
+}
+
 
 

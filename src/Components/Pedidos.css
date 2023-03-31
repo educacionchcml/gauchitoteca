@@ -5,5 +5,17 @@
     bottom: -10px;
     text-align: center;
 }
-  
+
+@media screen and (min-width: 600px) {
+    .pedidos-container {
+        position: absolute;
+      top: 270px;
+      width: 50vw;
+      overflow: hidden;
+      height: 400px;
+      left: calc(50vw -400px) ;
+    }
+
+    
+}
   

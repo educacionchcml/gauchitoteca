@@ -9,7 +9,10 @@ export default function Arte({setRutaSeccion}) {
     },[])
     return (
         <>
+        <div className="seccion-container">
+
         <h6>[Aqui irian las expresiones artisticas]</h6>
+        </div>
         </>
     )
 }

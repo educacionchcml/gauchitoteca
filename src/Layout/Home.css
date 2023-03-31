@@ -9,6 +9,9 @@
     top: 25px;
     width: 100%;
 }
+.titulo-container:hover {
+    cursor: pointer;
+}
 .titulo {
     margin: 0;
     text-align: center;
@@ -39,6 +42,16 @@
         top: 50px;
         left: calc(50% - 250px);
         width: 500px;
+    }
+    .secciones-container {
+        position: absolute;
+        width: calc(100vw - 400px);
+        top: 120px;
+        left: 350px;
+        margin-left: 0px;
+    }
+    .tituloSeccion-container {
+        margin-left: 60px;
     }
 }
 
