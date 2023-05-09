@@ -6,15 +6,13 @@ import { GlobalContext } from "../Contexts/GlobalContext";
 
 export default function Altar({openFormPedidos, setRutaSeccion}) {
     const global = useContext(GlobalContext);
-    const toggleResplandor = () => global.resplandor ? global.setResplandor(!global.resplandor) : global.setResplandor(!global.resplandor);
     const nameUrl = useLocation();
-    console.log(nameUrl);
     return(
         <>
-            <div onClick={()=>toggleResplandor()} className="altar-container">
-                <img className={`pent1 ${global.resplandor && `active`}`} src="https://firebasestorage.googleapis.com/v0/b/gauchitoteca.appspot.com/o/layout%2Fgauchitoteca%20altar2-03.png?alt=media&token=7c39669e-b4b5-42a7-aafb-4a10dd90a515"></img>
-                <img className="pent2" src="https://firebasestorage.googleapis.com/v0/b/gauchitoteca.appspot.com/o/layout%2Fgauchitoteca%20altar2-04.png?alt=media&token=54776407-3a9a-479b-86f5-c296a2028045"></img>
-                <img className="gaucho" src="https://firebasestorage.googleapis.com/v0/b/gauchitoteca.appspot.com/o/layout%2Fgauchitoteca%20altar2-05.png?alt=media&token=5fe477c4-efb0-4fb1-977b-ff558ad20c9e"></img>
+            <div className="altar-container">
+                <img className={`pent1 ${global.resplandor && `active`}`} src="https://firebasestorage.googleapis.com/v0/b/gauchitoteca.appspot.com/o/layout%2FgauchitotecaWEB-03.png?alt=media&token=cc32675f-b8a7-45ba-9867-b34d3f4eb610"></img>
+                <img className="pent2" src="https://firebasestorage.googleapis.com/v0/b/gauchitoteca.appspot.com/o/layout%2FgauchitotecaWEB-04.png?alt=media&token=dcc543e6-2837-49e8-9548-3d2d3fc46514"></img>
+                <img className="gaucho" src="https://firebasestorage.googleapis.com/v0/b/gauchitoteca.appspot.com/o/layout%2FgauchitotecaWEB-05.png?alt=media&token=b61df36b-ff7e-407e-b2a5-2f0d5c1889d3"></img>
             </div>
             <Pedidos></Pedidos>
             <div className="botones-container">

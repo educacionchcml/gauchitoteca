@@ -17,22 +17,30 @@ export function Home (){
     const [isOpenEncabezado, openEncabezado, closeEncabezado] = useModal(false);
     const [isOpenFormPedidos, openFormPedidos, closeFormPedidos] = useModal(false);
     const [rutaSeccion, setRutaSeccion] = useState("");
+    const [actualizacion, setActualizacion] = useState(false);
 
     useEffect(()=>{ 
+        //console.log(actualizacion);
         if(global.primeraVez) {
             setTimeout(()=> openEncabezado(), 1000);
             global.setPrimeraVez(false);
         }},[]);
-    const navigate = useNavigate()
-    const mostrarAltar = () => {
+        const navigate = useNavigate()
+        const mostrarAltar = () => {
         navigate("/");
         setRutaSeccion("");
+    }
+
+    const actualizar = () => {
+        setActualizacion(true);
+        //console.log(actualizacion);
+        closeFormPedidos();
     }
         
     return (
         <div className="home-container">
             {isOpenEncabezado && <ModalEncabezado closeEncabezado={closeEncabezado}></ModalEncabezado>}
-            {isOpenFormPedidos && <FormPedidos closeFormPedidos={closeFormPedidos}></FormPedidos>}
+            {isOpenFormPedidos && <FormPedidos actualizar={actualizar}></FormPedidos>}
             <div onClick={()=>mostrarAltar()} className="titulo-container"><h1 className="titulo">GAUCHITOTECA</h1></div>
                 <CarrouselSecciones></CarrouselSecciones>
                 <div className="secciones-container">

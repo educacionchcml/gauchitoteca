@@ -1,32 +1,42 @@
-import React, {useState} from "react";
+import React, { useState, useContext } from "react";
 import "./FormPedidos.css"
 import { pedidosCollectionRef } from "../firebase";
 import { doc, setDoc } from "firebase/firestore";
+import { GlobalContext } from "../Contexts/GlobalContext";
 
-export default function FormPedidos({closeFormPedidos, toggleResplandor, obtenerPedidos}) {
+export default function FormPedidos({obtenerPedidos, actualizar}) {
 
     const [pedido, setPedido] = useState("");
     const [fecha, setFecha] = useState(Date.now());
     const [enviado, setEnviado] = useState(false);
+    const global = useContext(GlobalContext);
+    const toggleResplandor = () => global.setResplandor(true);
 
     function pedidoHandler(e) {
         setPedido(e.target.value);
     }
+
     async function subirDoc(e) {
         e.preventDefault();
         await setDoc(doc(pedidosCollectionRef), {pedido, fecha}).then(()=>setEnviado(true)).catch((err)=>console.log(err));
         setTimeout(()=>{
             toggleResplandor(); 
             setEnviado(false);
-            closeFormPedidos();
-        }, 2000);
+        }, 1000);
+        actualizar();   
+    }
+
+    const CerrarForm = (e) => {
+        if(e.target.className === "pedirle-container") {
+            actualizar();    
+        }   
     }
 
     const f = new Date(fecha).toLocaleString("es-AR",  {dateStyle: "long"});
     return(
-        <div className="pedirle-container" onClick={closeFormPedidos}>
+        <div className="pedirle-container" onClick={(e) => CerrarForm(e)}>
             {enviado && <div className="pedirle-confirmacion"><h1>Pedido enviado ✨ </h1></div>}
-            <button className="pedirle-buttonCerrar" onClick={closeFormPedidos}>X</button>
+            <button className="pedirle-buttonCerrar" onClick={() => actualizar()}>X</button>
                 <div className="formPedidos-container">
                     <form className="formPedidos" onSubmit={(e) => subirDoc(e)}>
                         <h6 className="h6Pedido">Mi pedido 🙏</h6>
@@ -34,7 +44,7 @@ export default function FormPedidos({closeFormPedidos, toggleResplandor, obtener
                         <input className="inputFecha" type="text" value={f} readOnly ></input>
                         <button className="button-31" type="submit">Enviar</button>
                     </form>
-            </div>
+                </div>
         </div>
     )
 }

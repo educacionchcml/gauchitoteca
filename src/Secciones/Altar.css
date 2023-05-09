@@ -1,21 +1,24 @@
 
 .altar-container {
     position: relative;
-    width: 70%;
     height: calc(100% - 100px);
-    left: 15%;
-    top: 40px;
+    /*left: 200px;
+    top: 40px;*/
     display: flex;
     justify-content: center;
+    align-items: center;
 }
 .altar-container:hover{
     cursor: pointer;
 }
-.pent1, .pent2, .gaucho{
+.pent1, .pent2 {
     position: absolute;
     width: 150px;
 }
-
+.gaucho {
+  position: absolute;
+  width: 130px;
+}
 .botones-container {
     position: relative;
     width: calc(100% - 20px);
@@ -86,25 +89,28 @@
 
   @media screen and (min-width: 600px) {
     .altar-container {
-      position: absolute;
-      top: 0;
-      width: 100vw;
-      height: 400px;
-      left: -350px;
+      position: relative;
+      top: 40px;
+      width: 100%;
+      height: 300px;
     }
-    .pent1, .pent2, .gaucho{
+    .pent1, .pent2 {
       position: absolute;
       width: 200px;
     }
-    .botones-container {
+    .gaucho {
       position: absolute;
+      width: 150px;
+    }
+    .botones-container {
+      position: relative;
       justify-content: center;
-      margin-top: 0px;
-      height: 500px;
+      bottom: -50px;
+      height: 50px;
       top:inherit;
       gap: 20px;
-      width: 100vw;
-      left: -350px;
+      width: 100%;
+      margin: 0;
     }
     .instrucciones {
         font-size: 18px;

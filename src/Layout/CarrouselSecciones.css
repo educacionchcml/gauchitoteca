@@ -46,11 +46,11 @@
         top: 50px;
         left: 50px;
         flex-direction: column;
-        width: 300px;
+        width: 200px;
         overflow-x: hidden;
     }
     .carrousel-item {
-        width: 250px;
+        width: 160px;
         margin: 10px;
     }
     .carrousel-item h2 {
