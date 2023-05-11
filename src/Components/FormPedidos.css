@@ -7,28 +7,47 @@
     z-index: 500;
     justify-content: center;
 }
-.pedirle-buttonCerrar {
-    position: absolute;
-    top: calc(55vh + 20px);
-    right: calc(5% + 20px);
-    width: 30px;
-    height: 30px;
-    border-radius: 3px;
-    background-color: #ed1d23;
-    color: #fff;
-    font-size: 18px;
-    border: none;
-    z-index: 110;
-}
+
 .formPedidos-container {
-    background-color: rgba(26, 26, 26, 0.87);
+    background-color: rgb(19, 19, 19);
+    border-radius: 10px;
     position: relative;
     display: flex;
-    justify-content: center;
-    top: 55vh;
+    flex-direction: column;
+    align-items: center;
+    top: 35vh;
     width: 90%;
-    height: 270px;
+    height: 60vh;
 }
+
+.formPedidos {
+  position: relative;
+  top: 20px;
+  width: 86%;
+  display: flex;
+  flex-direction: column;
+}
+
+.buttonCerrar-container {
+  position: relative;
+  top: 20px;
+  width: 86%;
+  height: 30px;
+}
+
+.pedirle-buttonCerrar {
+  position: relative;
+  width: 30px;
+  height: 30px;
+  float: right;
+  border-radius: 3px;
+  background-color: #ed1d23;
+  color: #fff;
+  font-size: 18px;
+  border: none;
+  z-index: 110;
+}
+
 .pedirle-confirmacion {
   position: absolute;
   width: 90%;
@@ -37,34 +56,38 @@
   z-index: 100;
   display: flex;
   justify-content: start;
-  align-items: flex-end;
 }
+
 .pedirle-confirmacion h1 {
   font-size: 20px;
   color: #ed1d23;
   margin: 20px;
 }
-.h6Pedido{
-  position: absolute;
+.h6Pedido, .h6ElegirOfrenda{
+  position: relative;
   color: #fff;
-  top: -35px;
-  left: 0;
+  margin: 0;
 }
-.formPedidos {
-    position: relative;
-    top: 60px;
-    display: flex;
-    flex-direction: column;
-    align-items: end;
+.h6ElegirOfrenda{
+  margin-top: 20px;
+  margin-bottom: 10px;
 }
+
 .textareaPedido {
   margin-top: 10px;
+  height: 100px;
   resize: none;
+  /*border-radius: 5px;*/
 }
 .inputFecha {
-  width: 70%;
-  margin-top: 2px;
+  position: relative;
+  /*border-radius: 5px;*/
+  width: 50%;
+  margin-top: 5px;
+  margin-right: 0;
+  margin-left: auto;
   text-align: center;  
+  float: right;
 }
 .button-31 {
     align-items: center;
@@ -116,6 +139,53 @@
     cursor: pointer;
   }
 
+  .selectOfrenda {
+    width: 100%;
+  }
+  .options {
+    height: 60px;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content:center;
+  }
+  .option{
+    display: grid;
+    place-items: center;
+    transition: all .2s ease-in-out;
+    transform: scale(0.9);
+  }
+  .option:hover{
+    transform: scale(1);
+  }
+  .option.seleccionado{
+    border: 2px solid coral;
+    border-radius: 3px;
+    background-color: rgba(255, 127, 80, 0.336);
+  }
+  .option img {
+    filter: drop-shadow(0px 0px 5px rgb(255, 181, 154));
+  }
+
+  .imgOfrenda1 {
+    width: 110%;
+  }
+
+  .imgOfrenda3 {
+    margin-top: 3px;
+    width: 90%;
+  }
+
+  .imgOfrenda5 {
+    margin-left: 3px;
+  }
+
+  .button-31 {
+    width: 100px;
+    margin-right: 0;
+    margin-left: auto;
+  }
+
   @media screen and (min-width: 600px) {
     .pedirle-container {
       cursor:pointer;
@@ -123,8 +193,15 @@
     .formPedidos-container {
       top: 25vh;
       min-width: 340px;
-      width: 30%;
-      height: 300px;
+      width: 40%;
+      height: 420px;
+   }
+   .buttonCerrar-container {
+    top: 30px;
+   }
+   .formPedidos {
+    top: 20px;
+    height: calc(100% - 60px);
    }
    .pedirle-confirmacion {
      top: 25vh;
@@ -132,20 +209,22 @@
       width: 30%;
       height: 300px;
   }
+
   .pedirle-confirmacion h1 {
       margin: 40px 55px;
   }
-  .formPedidos {
-      height: 200px;
-      top: 50px;
-      padding-top: 20px;
-  }
-    .pedirle-buttonCerrar {
-      position: absolute;
-      top:calc(25vh + 10px);
-      left: calc(65% - 40px);
-  }
-    .h6Pedido {
+
+  .h6Pedido {
     top:-10px;
+  }
+
+  .button-31 {
+    position: absolute;
+    height: 40px;
+    padding-bottom: 4px;
+    margin-top: 0;
+    bottom: 20px;
+    left: auto;
+    right: 0;
   }
 }

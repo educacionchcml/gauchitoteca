@@ -1,6 +1,7 @@
 
 .altar-container {
     position: relative;
+    width: 100%;
     height: calc(100% - 100px);
     /*left: 200px;
     top: 40px;*/
@@ -13,21 +14,21 @@
 }
 .pent1, .pent2 {
     position: absolute;
-    width: 150px;
+    width: 200px;
 }
 .gaucho {
   position: absolute;
-  width: 130px;
+  top: 40px;
+  width: 180px;
 }
 .botones-container {
     position: relative;
-    width: calc(100% - 20px);
+    /*width: calc(100% - 20px);*/
+    width: 80%;
+    left: 10%;
     bottom: 35px;
-    margin-top: auto;
-    margin-left: 10px;
-    margin-right: 10px;
     height: 40px;
-    top: 0px;
+    top: 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -104,12 +105,11 @@
     }
     .botones-container {
       position: relative;
+      display: flex;
       justify-content: center;
-      bottom: -50px;
+      top: 50px;
       height: 50px;
-      top:inherit;
       gap: 20px;
-      width: 100%;
       margin: 0;
     }
     .instrucciones {

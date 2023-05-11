@@ -7,6 +7,7 @@ import { GlobalContext } from "../Contexts/GlobalContext";
 export default function FormPedidos({obtenerPedidos, actualizar}) {
 
     const [pedido, setPedido] = useState("");
+    const [ofrenda, setOfrenda] = useState();
     const [fecha, setFecha] = useState(Date.now());
     const [enviado, setEnviado] = useState(false);
     const global = useContext(GlobalContext);
@@ -18,7 +19,7 @@ export default function FormPedidos({obtenerPedidos, actualizar}) {
 
     async function subirDoc(e) {
         e.preventDefault();
-        await setDoc(doc(pedidosCollectionRef), {pedido, fecha}).then(()=>setEnviado(true)).catch((err)=>console.log(err));
+        await setDoc(doc(pedidosCollectionRef), {pedido, ofrenda, fecha}).then(()=>setEnviado(true)).catch((err)=>console.log(err));
         setTimeout(()=>{
             toggleResplandor(); 
             setEnviado(false);
@@ -32,16 +33,45 @@ export default function FormPedidos({obtenerPedidos, actualizar}) {
         }   
     }
 
+    const elegirOfrenda = (e) => {
+        let id = e.currentTarget.id
+        setOfrenda(parseInt(id));
+    }
+
     const f = new Date(fecha).toLocaleString("es-AR",  {dateStyle: "long"});
     return(
         <div className="pedirle-container" onClick={(e) => CerrarForm(e)}>
             {enviado && <div className="pedirle-confirmacion"><h1>Pedido enviado ✨ </h1></div>}
-            <button className="pedirle-buttonCerrar" onClick={() => actualizar()}>X</button>
+            
                 <div className="formPedidos-container">
+                    <div className="buttonCerrar-container">
+                        <button className="pedirle-buttonCerrar" onClick={() => actualizar()}>X</button>
+                    </div>
+                
                     <form className="formPedidos" onSubmit={(e) => subirDoc(e)}>
-                        <h6 className="h6Pedido">Mi pedido 🙏</h6>
+                        <h5 className="h6Pedido">Mi pedido</h5>
                         <textarea className="textareaPedido" placeholder="...escribí aquí tu pedido para el gauchito" type="text" cols="40" rows="5" onChange={(e) => pedidoHandler(e)}></textarea>
                         <input className="inputFecha" type="text" value={f} readOnly ></input>
+                        <h5 className="h6ElegirOfrenda">Elegí una ofrenda</h5>
+                            <div className="selectOfrenda">
+                                <div className="options">
+                                    <div className={`option ${ofrenda === 1 && "seleccionado"}`} id="1" onClick={elegirOfrenda}>
+                                        <img className="imgOfrenda1" src="https://firebasestorage.googleapis.com/v0/b/gauchitoteca.appspot.com/o/ofrendas%2Ficonos%20gauchitoteca1501.png?alt=media&token=fdc927d9-f7a7-4b9f-96ce-146f9fe5187d" alt=""></img>
+                                    </div>
+                                    <div className={`option ${ofrenda === 2 && "seleccionado"}`} id="2" onClick={elegirOfrenda}>
+                                        <img className="imgOfrenda2" src="https://firebasestorage.googleapis.com/v0/b/gauchitoteca.appspot.com/o/ofrendas%2Ficonos%20gauchitoteca1502.png?alt=media&token=5dfb674b-73cb-4b80-a9ed-9e01827aa27a" alt=""></img>
+                                    </div>
+                                    <div className={`option ${ofrenda === 3 && "seleccionado"}`} id="3" onClick={elegirOfrenda}>
+                                        <img className="imgOfrenda3" src="https://firebasestorage.googleapis.com/v0/b/gauchitoteca.appspot.com/o/ofrendas%2Ficonos%20gauchitoteca1503.png?alt=media&token=a4cce00a-d38d-4af5-8d83-db272fd96912" alt=""></img>
+                                    </div>
+                                    <div className={`option ${ofrenda === 4 && "seleccionado"}`} id="4" onClick={elegirOfrenda}>
+                                        <img className="imgOfrenda4" src="https://firebasestorage.googleapis.com/v0/b/gauchitoteca.appspot.com/o/ofrendas%2Ficonos%20gauchitoteca1504.png?alt=media&token=b900ee2a-7564-4847-889e-c6b9e30ac70c" alt=""></img>
+                                    </div>
+                                    <div className={`option ${ofrenda === 5 && "seleccionado"}`} id="5" onClick={elegirOfrenda}>
+                                        <img className="imgOfrenda5" src="https://firebasestorage.googleapis.com/v0/b/gauchitoteca.appspot.com/o/ofrendas%2Ficonos%20gauchitoteca1505.png?alt=media&token=c6c2ce74-eb70-449c-8c6c-bb40c7ec7481" alt=""></img>
+                                    </div>
+                                </div>
+                            </div>
                         <button className="button-31" type="submit">Enviar</button>
                     </form>
                 </div>

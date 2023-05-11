@@ -6,6 +6,10 @@
     text-align: center;
 }
 
+.test {
+    display: none;
+}
+
 @media screen and (min-width: 600px) {
     .pedidos-container {
         position: absolute;
