@@ -16,7 +16,7 @@
         width: 200px;
         height: 400px;
         right: -200px;
-        background-color: blueviolet;
+        /*background-color: blueviolet;*/
         top: calc(50vh - 250px);
         margin: 0;
       overflow: hidden;

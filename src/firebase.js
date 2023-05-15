@@ -27,6 +27,7 @@ export const app = initializeApp(firebaseConfig);
 //Firestore
 export const db = getFirestore(app);
 export const pedidosCollectionRef = collection(db, "pedidos");
+export const audiosCollectionRef = collection(db, "audios");
 
 //Storage
 export const storage = getStorage();

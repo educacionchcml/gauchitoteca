@@ -29,6 +29,7 @@
 }
 .tituloSeccion-container{
     position: relative;
+    margin-left: 30px;
 }
 .tituloSeccion {
     font-size: 30px;

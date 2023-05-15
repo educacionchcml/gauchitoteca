@@ -1,21 +1,47 @@
-import React, {useEffect, useContext} from "react";
+import React, {useEffect, useContext, useState} from "react";
+import { collection, query, where, getDocs } from "firebase/firestore";
+import { audiosCollectionRef } from "../firebase";
 import { useLocation } from "react-router-dom";
 import {GlobalContext} from "./../Contexts/GlobalContext"
+import "./Audios.css";
 
 export default function Audios({setRutaSeccion}) {
+    const [losAudios, setLosAudios] = useState();
     const location = useLocation();
     useEffect(()=>{
         setRutaSeccion(location.pathname);
     },[])
-    const audio1 = "https://firebasestorage.googleapis.com/v0/b/gauchitoteca.appspot.com/o/audios%2F1-%20El%20Chino.mp3?alt=media&token=91a9a412-b7ac-4d60-bf22-e41c6ad8ef01";
-    const audio2 = "https://firebasestorage.googleapis.com/v0/b/gauchitoteca.appspot.com/o/audios%2F1-%20Cesar%20Panella%20I.mp3?alt=media&token=8a7428a3-9d04-48b5-84d1-bd0bc0743de5";
+    useEffect(()=>{
+        obtenerAudios();
+    }, [losAudios]);
+    
     const global = useContext(GlobalContext);
+
+    async function obtenerAudios() { 
+        const documentsSnapshots = await getDocs(audiosCollectionRef);
+        const audios = documentsSnapshots.docs.map((audio, i)=>({
+            id: audio.id,
+            entrevistado: audio.data().entrevistado,
+            fecha: audio.data().fecha,
+            link: audio.data().link,
+            lugar: audio.data().lugar,
+            recopilador: audio.data().recopilador,
+            resumen: audio.data().resumen,
+            titulo: audio.data().titulo,
+        }))
+        setLosAudios(audios);
+    }
+
     return (
     <>  
-    <div className="seccion-container">
-
-        <h6>[Aqui irian audios con referencias]</h6>
-        <audio src={audio1} controls></audio>
+    <div className="seccion-container audios-container">
+        {losAudios ? losAudios.map((audio, i) => (
+            <div className="elAudio-container">
+                <audio src={audio.link} controls></audio>
+                <h2>{audio.titulo || "(sin título)"}</h2>
+                <p>testimonio de <b>{audio.entrevistado}</b>, {audio.lugar}. <br></br></p><p>Recopilado por <b>{audio.recopilador}</b></p>
+            </div>
+        )) : <></>}
     </div>
     </>
     )

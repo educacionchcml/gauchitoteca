@@ -1,39 +1,53 @@
 @keyframes display {
     0% {
-      transform: translateX(0px) translateY(0px);
-      opacity: 0;
+      transform: translateX(0px) translateY(40px) scale(0.8);
     }
+    15% {
+      transform: scale(1)
+    } 
     50% {
-      transform: translateX(0px) translateY(100px);
-      opacity: 1;
+      transform: translateX(0px) translateY(0px) scale(1);
+    }
+    85% {
+      transform: scale(1)
     }
     100% {
-      transform: translateX(0px) translateY(400px);
-      opacity: 0;
+      transform: translateX(300px) translateY(-100px) scale(0.8);
+      
     }
   }
 
 .pedido-container {
-    width: 200px;
+  transform: translateX(-900px) translateY(0);
+    width: 240px;
     z-index: 300;
     color: rgb(0, 0, 0);
     background-color: antiquewhite;
-    height: auto;
+    height: 80px;
     padding: 10px 0;
     overflow-y: hidden;
     position: absolute;
-    top: 0;
-    left: calc(50% - 100px);
-    opacity: 0;
+    top: -20px;
+    left: calc(50% - 120px);
     animation: display infinite ease;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+    align-items: center;
+
+}
+.pedido-container:hover {
+  transform: translateX(0px) translateY(0px);
+}
+.pedido-textoContainer{
+
 }
 .pedido-texto {
     margin: 5px;
-    font-size: 12px;
+    font-size: 16px;
 }
 .pedido-ofrenda {
     margin: 5px;
-    /*position: absolute;*/
     top: 0px;
     float: right;
     font-size: 24px;
@@ -43,5 +57,6 @@
 }
 .pedido-fecha {
     font-size: 10px;
-    margin: 5px;
+    margin: 5px 0 15px 0;
 }
+

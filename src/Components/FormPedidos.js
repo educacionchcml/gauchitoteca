@@ -7,7 +7,7 @@ import { GlobalContext } from "../Contexts/GlobalContext";
 export default function FormPedidos({obtenerPedidos, actualizar}) {
 
     const [pedido, setPedido] = useState("");
-    const [ofrenda, setOfrenda] = useState();
+    const [ofrenda, setOfrenda] = useState("");
     const [fecha, setFecha] = useState(Date.now());
     const [enviado, setEnviado] = useState(false);
     const global = useContext(GlobalContext);
@@ -19,12 +19,18 @@ export default function FormPedidos({obtenerPedidos, actualizar}) {
 
     async function subirDoc(e) {
         e.preventDefault();
-        await setDoc(doc(pedidosCollectionRef), {pedido, ofrenda, fecha}).then(()=>setEnviado(true)).catch((err)=>console.log(err));
+        if(pedido && ofrenda) {
+            await setDoc(doc(pedidosCollectionRef), {pedido, ofrenda, fecha}).then(()=>setEnviado(true)).catch((err)=>console.log(err));
         setTimeout(()=>{
             toggleResplandor(); 
             setEnviado(false);
         }, 1000);
         actualizar();   
+        } else if (!pedido){
+            alert("Escribí un pedido o agradecimiento para el gauchito.");
+        } else if (!ofrenda) {
+            alert("Elegí una ofrenda para dejarle.")
+        }
     }
 
     const CerrarForm = (e) => {

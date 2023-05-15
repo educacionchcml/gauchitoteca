@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./Pedido.css";
 import { useWindowSize } from "../Hooks/useWindowsSize";
 
-export default function Pedido({duracionAnimacion, delayItem, pedido, fecha}) {
+export default function Pedido({duracionAnimacion, delayItem, pedido, ofrenda, fecha}) {
     const optionsDate = { weekday: 'long', year: 'numeric', month: 'short', day: 'numeric' };
     const date = new Date(fecha).toLocaleString("es-AR",  {dateStyle: "long"});
     
@@ -31,9 +31,11 @@ export default function Pedido({duracionAnimacion, delayItem, pedido, fecha}) {
 
     return(
         <div className="pedido-container" style={{animationDuration: duracionAnimacion + "s", animationDelay: delayItem + "s"}}>
-            <p className="pedido-ofrenda"><img className="img-ofrenda" src={ofrendas[ofrendaRandom]}></img></p>
-            <p className="pedido-fecha">{date}</p>
-            <p className="pedido-texto">{pedido}</p>
+            <p className="pedido-ofrenda"><img className="img-ofrenda" src={ofrendas[ofrenda -1]}></img></p>
+            <div className="pedido-textoContainer">
+                <p className="pedido-fecha">{date}</p>
+                <p className="pedido-texto">{pedido}</p>
+            </div>
         </div>
     )
 }
