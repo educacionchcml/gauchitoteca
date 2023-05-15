@@ -31,3 +31,9 @@ const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPl
 new BundleAnalyzerPlugin({
             generateStatsFile: true
         })
+
+
+
+https://drive.google.com/drive/folders/1uaJr_q1JE1qDLjHaLZNhYFr4xIqk8cky
+
+https://docs.google.com/spreadsheets/d/1RTwUkZTwGORb9O2jKaYIqZvL9oHom6vhDb_m-q0CSwU/edit#gid=0

@@ -10,8 +10,8 @@ export default function Pedidos() {
 
     useEffect(()=>{
         obtenerPedidos();
-        resetearPedidos()
-    }, [losPedidos]);
+        desordenar();
+    }, []);
 
     async function obtenerPedidos() { 
         const documentsSnapshots = await getDocs(pedidosCollectionRef);
@@ -24,13 +24,17 @@ export default function Pedidos() {
         setLosPedidos(pedidos);
     }
 
-    
-    const intervalo = setInterval(resetearPedidos, 20000);
-
-    function resetearPedidos() {
-        console.log("resetarLosPedidos");
-        setPedidosMostrar(losPedidos);
+    if (losPedidos) {     
+        const intervalo = setInterval(desordenar(), losPedidos.length * 4000); // son4000
     }
+
+    async function desordenar(){
+        let lpDesordenados = await losPedidos.sort(function(a,b) {return (Math.random()-0.5)});
+        setPedidosMostrar([...lpDesordenados]);
+        console.log(losPedidos);
+    }
+
+    
     
     return (
         <div className="pedidos-container">
