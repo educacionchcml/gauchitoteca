@@ -18,7 +18,7 @@ const firebaseConfig = {
   storageBucket: "gauchitoteca.appspot.com",
   messagingSenderId: "335825818089",
   appId: "1:335825818089:web:9ce2ca0a11713b5653fb78",
-  measurementId: "G-8BQ7XHKJ22"
+  measurementId: "G-8BQ7XHKJ22",
 };
 
 //Initialize Firebase
@@ -28,6 +28,7 @@ export const app = initializeApp(firebaseConfig);
 export const db = getFirestore(app);
 export const pedidosCollectionRef = collection(db, "pedidos");
 export const audiosCollectionRef = collection(db, "audios");
+export const imagenesCollectionRef = collection(db, "imagenes");
 
 //Storage
 export const storage = getStorage();

@@ -1,62 +1,65 @@
 @keyframes display {
-    0% {
-      transform: translateX(0px) translateY(40px) scale(0.8);
-    }
-    15% {
-      transform: scale(1)
-    } 
-    50% {
-      transform: translateX(0px) translateY(0px) scale(1);
-    }
-    85% {
-      transform: scale(1)
-    }
-    100% {
-      transform: translateX(300px) translateY(-100px) scale(0.8);
-      
-    }
+  0% {
+    transform: scale(0.8);
+    transform: translateX(0px) translateY(40px) scale(0.8);
+    opacity: 0;
   }
+  15% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1);
+    transform: translateX(0px) translateY(0px) scale(1);
+  }
+  85% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(0.8);
+    transform: translateX(300px) translateY(-100px) scale(0.8);
+    opacity: 0;
+  }
+}
 
 .pedido-container {
   transform: translateX(-900px) translateY(0);
-    width: 240px;
-    z-index: 300;
-    color: rgb(0, 0, 0);
-    background-color: antiquewhite;
-    height: 80px;
-    padding: 10px 0;
-    overflow-y: hidden;
-    position: absolute;
-    top: -20px;
-    left: calc(50% - 120px);
-    animation: display infinite ease;
-    display: flex;
-    flex-direction: row-reverse;
-    justify-content: flex-end;
-    align-items: center;
-
+  width: 240px;
+  z-index: 300;
+  color: rgb(0, 0, 0);
+  background-color: antiquewhite;
+  height: 80px;
+  padding: 10px 0;
+  overflow-y: hidden;
+  position: absolute;
+  top: -20px;
+  left: calc(50% - 120px);
+  animation: display ease;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: flex-end;
+  align-items: center;
 }
 .pedido-container:hover {
   transform: translateX(0px) translateY(0px);
 }
-.pedido-textoContainer{
-
+.pedido-textoContainer {
 }
 .pedido-texto {
-    margin: 5px;
-    font-size: 16px;
+  margin: 5px;
+  font-size: 16px;
 }
 .pedido-ofrenda {
-    margin: 5px;
-    top: 0px;
-    float: right;
-    font-size: 24px;
+  margin: 5px;
+  top: 0px;
+  float: right;
+  font-size: 24px;
 }
 .img-ofrenda {
   width: 35px;
 }
 .pedido-fecha {
-    font-size: 10px;
-    margin: 5px 0 15px 0;
+  font-size: 10px;
+  margin: 5px 0 15px 0;
 }
-

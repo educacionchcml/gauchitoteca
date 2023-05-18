@@ -1,0 +1,13 @@
+/* .image-gallery {
+  background-color: aquamarine;
+}
+
+.image-gallery-content {
+  height: 100px;
+} */
+
+.gallery-itemDescription {
+  margin: 0 10px 0 30px;
+  font-size: 14px;
+  line-height: 14px;
+}

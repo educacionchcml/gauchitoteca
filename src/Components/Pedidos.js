@@ -1,48 +1,61 @@
-import React, {useEffect, useState} from "react";
+import React, { useEffect, useState } from "react";
 import { collection, query, where, getDocs } from "firebase/firestore";
 import { pedidosCollectionRef } from "../firebase";
 import Pedido from "./Pedido";
 import "./Pedidos.css";
 
-export default function Pedidos() {
-    const [losPedidos, setLosPedidos] = useState();
-    const [pedidosMostrar, setPedidosMostrar] = useState();
+export default function Pedidos({ actualizacion }) {
+  const [losPedidos, setLosPedidos] = useState();
+  const [pedidosMostrar, setPedidosMostrar] = useState();
 
-    useEffect(()=>{
-        obtenerPedidos();
-        desordenar();
-    }, []);
+  useEffect(() => {
+    obtenerPedidos();
+  }, [actualizacion]);
 
-    async function obtenerPedidos() { 
-        const documentsSnapshots = await getDocs(pedidosCollectionRef);
-        const pedidos = documentsSnapshots.docs.map((pedido, i)=>({
-            id: pedido.id,
-            pedido: pedido.data().pedido,
-            ofrenda: pedido.data().ofrenda,
-            fecha: pedido.data().fecha
-        }))
-        setLosPedidos(pedidos);
+  useEffect(() => {
+    if (losPedidos) {
+      desordenar();
+      const intervalo = setInterval(desordenar, 4000);
     }
+  }, [losPedidos]);
 
-    if (losPedidos) {     
-        const intervalo = setInterval(desordenar(), losPedidos.length * 4000); // son4000
-    }
+  async function obtenerPedidos() {
+    const documentsSnapshots = await getDocs(pedidosCollectionRef);
+    const pedidos = documentsSnapshots.docs.map((pedido, i) => ({
+      id: pedido.id,
+      pedido: pedido.data().pedido,
+      ofrenda: pedido.data().ofrenda,
+      fecha: pedido.data().fecha,
+    }));
+    setLosPedidos(pedidos);
+  }
 
-    async function desordenar(){
-        let lpDesordenados = await losPedidos.sort(function(a,b) {return (Math.random()-0.5)});
-        setPedidosMostrar([...lpDesordenados]);
-        console.log(losPedidos);
-    }
+  function desordenar() {
+    let lpDesordenados = losPedidos.sort(function (a, b) {
+      return Math.random() - 0.5;
+    });
+    setPedidosMostrar([...lpDesordenados]);
+  }
 
-    
-    
-    return (
-        <div className="pedidos-container">
-            <h6 className="test">[Aqui se mostrarían los pedidos y agradecimientos de ls usuarios]</h6>
-            {pedidosMostrar ? pedidosMostrar.map((pedido, i) => (
-                <Pedido key={i} duracionAnimacion={4} delayItem={i * 4} pedido={pedido.pedido} ofrenda={pedido.ofrenda} fecha={pedido.fecha}></Pedido>
-            )) : <></>
-            }
-        </div>
-    )
+  return (
+    <div className="pedidos-container">
+      <h6 className="test">
+        [Aqui se mostrarían los pedidos y agradecimientos de ls usuarios]
+      </h6>
+      {pedidosMostrar ? (
+        pedidosMostrar.map((pedido, i) => (
+          <Pedido
+            key={pedido.id}
+            duracionAnimacion={4}
+            delayItem={1}
+            pedido={pedido.pedido}
+            ofrenda={pedido.ofrenda}
+            fecha={pedido.fecha}
+          ></Pedido>
+        ))
+      ) : (
+        <></>
+      )}
+    </div>
+  );
 }
