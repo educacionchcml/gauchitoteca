@@ -7,7 +7,39 @@
 } */
 
 .gallery-itemDescription {
-  margin: 0 10px 0 30px;
   font-size: 14px;
   line-height: 14px;
+}
+.gallery-descripciones-container {
+  margin: 20px 10px 10px 30px;
+}
+
+.imagenGrande-container {
+  position: fixed;
+  display: grid;
+  place-items: center;
+  background-color: rgba(7, 7, 7, 0.589);
+  top: 0px;
+  left: 0px;
+  width: 100vw;
+  height: 100vh;
+  z-index: 1000;
+}
+
+.imagenGrande {
+  /*width: 60%;*/
+  height: 80vh;
+}
+.boton-agrandar {
+  position: fixed;
+  top:10px;
+  width: 100px;
+  left: calc(50% - 50px);
+  z-index: 10000;
+}
+
+@media screen and (min-width: 600px) {
+  .gallery-descripciones-container {
+    margin: 10px 10px 10px 60px;
+  }
 }

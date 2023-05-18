@@ -158,25 +158,25 @@ h6 {
   !*** css ./node_modules/css-loader/dist/cjs.js!./src/Components/FormPedidos.css ***!
   \**********************************************************************************/
 .pedirle-container {
-    position: absolute;
-    display: flex;
-    width: 100%;
-    height: 100vh;
-    background-color: rgba(36, 36, 36, 0.281);
-    z-index: 500;
-    justify-content: center;
+  position: absolute;
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(36, 36, 36, 0.281);
+  z-index: 1000;
+  justify-content: center;
 }
 
 .formPedidos-container {
-    background-color: rgb(19, 19, 19);
-    border-radius: 10px;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    top: 35vh;
-    width: 90%;
-    height: 60vh;
+  background-color: rgb(19, 19, 19);
+  border-radius: 10px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  top: 35vh;
+  width: 90%;
+  height: 60vh;
 }
 
 .formPedidos {
@@ -209,25 +209,30 @@ h6 {
 
 .pedirle-confirmacion {
   position: absolute;
+  background-color: #ed1d23;
   width: 90%;
   height: 270px;
-  top: 55vh;
+  top: calc(50vh - 135px);
   z-index: 100;
   display: flex;
   justify-content: start;
+  align-items: center;
 }
 
 .pedirle-confirmacion h1 {
   font-size: 20px;
-  color: #ed1d23;
+  width: 100%;
+  text-align: center;
+  color: #ffffff;
   margin: 20px;
 }
-.h6Pedido, .h6ElegirOfrenda{
+.h6Pedido,
+.h6ElegirOfrenda {
   position: relative;
   color: #fff;
   margin: 0;
 }
-.h6ElegirOfrenda{
+.h6ElegirOfrenda {
   margin-top: 20px;
   margin-bottom: 10px;
 }
@@ -245,136 +250,139 @@ h6 {
   margin-top: 5px;
   margin-right: 0;
   margin-left: auto;
-  text-align: center;  
+  text-align: center;
   float: right;
 }
 .button-31 {
-    align-items: center;
-    appearance: none;
-    background-color: #FCFCFD;
-    border-radius: 4px;
-    border-width: 0;
-    box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px,rgba(45, 35, 66, 0.3) 0 7px 13px -3px,#D6D6E7 0 -3px 0 inset;
-    box-sizing: border-box;
-    color: #1d1d1d;
+  align-items: center;
+  appearance: none;
+  background-color: #fcfcfd;
+  border-radius: 4px;
+  border-width: 0;
+  box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px,
+    rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #d6d6e7 0 -3px 0 inset;
+  box-sizing: border-box;
+  color: #1d1d1d;
+  cursor: pointer;
+  font-weight: 600;
+  display: inline-flex;
+  height: 48px;
+  justify-content: center;
+  line-height: 1;
+  list-style: none;
+  overflow: hidden;
+  padding-left: 16px;
+  padding-right: 16px;
+  position: relative;
+  text-align: left;
+  text-decoration: none;
+  transition: box-shadow 0.15s, transform 0.15s;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  white-space: nowrap;
+  will-change: box-shadow, transform;
+  font-size: 18px;
+  margin-top: 20px;
+}
+
+.button-30:focus {
+  box-shadow: #d6d6e7 0 0 0 1.5px inset, rgba(45, 35, 66, 0.4) 0 2px 4px,
+    rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #d6d6e7 0 -3px 0 inset;
+}
+
+.button-30:hover {
+  box-shadow: rgba(45, 35, 66, 0.4) 0 4px 8px,
+    rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #d6d6e7 0 -3px 0 inset;
+  transform: translateY(-2px);
+}
+
+.button-30:active {
+  box-shadow: #d6d6e7 0 3px 7px inset;
+  transform: translateY(2px);
+}
+
+.pedirle-buttonCerrar {
+  cursor: pointer;
+}
+
+.selectOfrenda {
+  width: 100%;
+}
+.options {
+  height: 60px;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.option {
+  display: grid;
+  place-items: center;
+  transition: all 0.2s ease-in-out;
+  transform: scale(0.9);
+}
+.option:hover {
+  transform: scale(1);
+}
+.option.seleccionado {
+  border: 2px solid coral;
+  border-radius: 3px;
+  background-color: rgba(255, 127, 80, 0.336);
+}
+.option img {
+  filter: drop-shadow(0px 0px 5px rgb(255, 181, 154));
+}
+
+.imgOfrenda1 {
+  width: 110%;
+}
+
+.imgOfrenda3 {
+  margin-top: 3px;
+  width: 90%;
+}
+
+.imgOfrenda5 {
+  margin-left: 3px;
+}
+
+.button-31 {
+  width: 100px;
+  margin-right: 0;
+  margin-left: auto;
+}
+
+@media screen and (min-width: 600px) {
+  .pedirle-container {
     cursor: pointer;
-    font-weight: 600;
-    display: inline-flex;
-    height: 48px;
-    justify-content: center;
-    line-height: 1;
-    list-style: none;
-    overflow: hidden;
-    padding-left: 16px;
-    padding-right: 16px;
-    position: relative;
-    text-align: left;
-    text-decoration: none;
-    transition: box-shadow .15s,transform .15s;
-    user-select: none;
-    -webkit-user-select: none;
-    touch-action: manipulation;
-    white-space: nowrap;
-    will-change: box-shadow,transform;
-    font-size: 18px;
-    margin-top: 20px;
   }
-  
-  .button-30:focus {
-    box-shadow: #D6D6E7 0 0 0 1.5px inset, rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+  .formPedidos-container {
+    top: 25vh;
+    min-width: 340px;
+    width: 40%;
+    height: 420px;
   }
-  
-  .button-30:hover {
-    box-shadow: rgba(45, 35, 66, 0.4) 0 4px 8px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
-    transform: translateY(-2px);
-  }
-  
-  .button-30:active {
-    box-shadow: #D6D6E7 0 3px 7px inset;
-    transform: translateY(2px);
-  }
-
-  .pedirle-buttonCerrar {
-    cursor: pointer;
-  }
-
-  .selectOfrenda {
-    width: 100%;
-  }
-  .options {
-    height: 60px;
-    position: relative;
-    display: flex;
-    flex-direction: row;
-    justify-content:center;
-  }
-  .option{
-    display: grid;
-    place-items: center;
-    transition: all .2s ease-in-out;
-    transform: scale(0.9);
-  }
-  .option:hover{
-    transform: scale(1);
-  }
-  .option.seleccionado{
-    border: 2px solid coral;
-    border-radius: 3px;
-    background-color: rgba(255, 127, 80, 0.336);
-  }
-  .option img {
-    filter: drop-shadow(0px 0px 5px rgb(255, 181, 154));
-  }
-
-  .imgOfrenda1 {
-    width: 110%;
-  }
-
-  .imgOfrenda3 {
-    margin-top: 3px;
-    width: 90%;
-  }
-
-  .imgOfrenda5 {
-    margin-left: 3px;
-  }
-
-  .button-31 {
-    width: 100px;
-    margin-right: 0;
-    margin-left: auto;
-  }
-
-  @media screen and (min-width: 600px) {
-    .pedirle-container {
-      cursor:pointer;
-    }
-    .formPedidos-container {
-      top: 25vh;
-      min-width: 340px;
-      width: 40%;
-      height: 420px;
-   }
-   .buttonCerrar-container {
+  .buttonCerrar-container {
     top: 30px;
-   }
-   .formPedidos {
+  }
+  .formPedidos {
     top: 20px;
     height: calc(100% - 60px);
-   }
-   .pedirle-confirmacion {
-     top: 25vh;
-      min-width: 340px;
-      width: 30%;
-      height: 300px;
+  }
+  .pedirle-confirmacion {
+    top: 25vh;
+    min-width: 340px;
+    width: 30%;
+    height: 300px;
   }
 
   .pedirle-confirmacion h1 {
-      margin: 40px 55px;
+    margin: 40px 55px;
   }
 
   .h6Pedido {
-    top:-10px;
+    top: -10px;
   }
 
   .button-31 {
@@ -387,6 +395,7 @@ h6 {
     right: 0;
   }
 }
+
 /*!*************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js!./src/Layout/CarrouselSecciones.css ***!
   \*************************************************************************************/
@@ -559,7 +568,9 @@ h6 {
 /*!***********************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js!./src/Secciones/Publicaciones.css ***!
   \***********************************************************************************/
-
+.publicaciones-container {
+    margin: 0 30px 0 30px
+}
 /*!**********************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js!./src/Components/Publicacion.css ***!
   \**********************************************************************************/
@@ -584,6 +595,14 @@ h6 {
 .publicacion-container p {
     margin-left: 15px;
 }
+.icono-publicaciones {
+    font-size: 20px;
+    margin-right: 7px;
+}
+
+.anchor-pub {
+    color: black;
+}
 
 
 /*!************************************************************************!*\
@@ -591,10 +610,10 @@ h6 {
   \************************************************************************/
 .elPdf-container {
     position: absolute;
-    width: 100vw;
-    height: 100vh;
-    top: -240px;
-    left: -30px;
+    width: 90%;
+    height: 80vh;
+    top: -20vh;
+    left: 5%;
     margin: 0;
     z-index: 700;
 }
@@ -623,16 +642,17 @@ h6 {
 }
 
 @media screen and (min-width: 600px) {
+
     .elPdf-iframe {
         position: relative;
-        top: 200px;
-        width: 50%;
-        height: 400px;
+        top: 120px;
+        width: 100%;
+        height: 500px;
     }
     .elPdf-cerrar {
         position: absolute;
         top: 550px;
-        left: calc(50% - 85px);
+        right: 0;
     }
 }
 /*!********************************************************************************!*\
@@ -647,9 +667,17 @@ h6 {
 } */
 
 .gallery-itemDescription {
-  margin: 0 10px 0 30px;
   font-size: 14px;
   line-height: 14px;
+}
+.gallery-descripciones-container {
+  margin: 20px 10px 10px 30px;
+}
+
+@media screen and (min-width: 600px) {
+  .gallery-descripciones-container {
+    margin: 10px 10px 10px 60px;
+  }
 }
 
 /*!***************************************************************************!*\
@@ -675,8 +703,8 @@ h6 {
 }
 .gaucho {
   position: absolute;
-  top: 40px;
   width: 180px;
+  margin-top: 40px;
 }
 .botones-container {
     position: relative;
@@ -918,7 +946,7 @@ h6 {
         font-size: 70px;
     }
     .titulo-container {
-        top: 50px;
+        top: 30px;
         left: calc(50% - 250px);
         width: 500px;
     }

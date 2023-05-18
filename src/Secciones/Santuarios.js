@@ -11,6 +11,7 @@ export default function Santuarios({ setRutaSeccion }) {
   const windowSize = useWindowDimensions();
   const [imagenes, setImagenes] = useState([]);
   const [indexActual, setIndexAcutal] = useState(0);
+  const [ampliar, setAmpliar] = useState();
   const location = useLocation();
   useEffect(() => {
     setRutaSeccion(location.pathname);
@@ -26,7 +27,7 @@ export default function Santuarios({ setRutaSeccion }) {
       thumbnail: imagen.data().thumb,
       originalTitle: imagen.data().lugar,
       descripcion: imagen.data().fotografo,
-      originalHeight: isCel() ? 250 : 500,
+      originalHeight: isCel() ? 250 : 400,
       thumbnailHeight: 100,
     }));
     setImagenes(data);
@@ -37,8 +38,18 @@ export default function Santuarios({ setRutaSeccion }) {
   function getIndex() {
     setIndexAcutal(elSlideRef.current.getCurrentIndex());
   }
+  function agrandar() {
+    setAmpliar(imagenes[indexActual].original);    
+  }
+  const cerrarAgrandar = () => setAmpliar(null);
 
   return (
+    <>
+      {ampliar && (<div className="imagenGrande-container">
+        <button onClick={()=> cerrarAgrandar()}>X</button>
+        <img className="imagenGrande" src={ampliar}></img>
+      </div>)}
+
     <div className="gallery-container">
       {imagenes.length ? (
         <div className="gallery-descripciones-container">
@@ -60,7 +71,11 @@ export default function Santuarios({ setRutaSeccion }) {
         slideDuration={400}
         slideInterval={4000}
         showThumbnails={!isCel()}
+        autoPlay={true}
       />
+      
     </div>
+    <button className="boton-agrandar" onClick={()=>agrandar()}>ampliar</button>
+    </>
   );
 }

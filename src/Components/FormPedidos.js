@@ -8,7 +8,7 @@ export default function FormPedidos({ obtenerPedidos, cerrarForm }) {
   const [pedido, setPedido] = useState("");
   const [ofrenda, setOfrenda] = useState("");
   const [fecha, setFecha] = useState(Date.now());
-  const [enviado, setEnviado] = useState(true);
+  const [enviado, setEnviado] = useState(false);
   const global = useContext(GlobalContext);
   const toggleResplandor = () => global.setResplandor(true);
 

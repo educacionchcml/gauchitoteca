@@ -19,4 +19,12 @@
 .publicacion-container p {
     margin-left: 15px;
 }
+.icono-publicaciones {
+    font-size: 20px;
+    margin-right: 7px;
+}
+
+.anchor-pub {
+    color: black;
+}
 

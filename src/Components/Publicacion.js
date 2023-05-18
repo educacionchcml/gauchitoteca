@@ -1,6 +1,8 @@
 import React from "react";
 import "./Publicacion.css";
-const iconoPdf = "https://firebasestorage.googleapis.com/v0/b/gauchitoteca.appspot.com/o/layout%2FlogoPdf.png?alt=media&token=c356d7fa-04de-4bb7-8831-77a2d66513c7";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faFilePdf} from '@fortawesome/free-solid-svg-icons'
+import { faDownload} from '@fortawesome/free-solid-svg-icons'
 
 export default function Publicacion({titulo, link, openPdf, setLinkPdf}) {
     function abrir(link) {
@@ -9,8 +11,9 @@ export default function Publicacion({titulo, link, openPdf, setLinkPdf}) {
     }
     return(
         <>
-            <div onClick={()=>abrir(link)} className="publicacion-container">
-                <img src="https://firebasestorage.googleapis.com/v0/b/gauchitoteca.appspot.com/o/layout%2FlogoPdf.png?alt=media&token=c356d7fa-04de-4bb7-8831-77a2d66513c7"></img>
+            <div className="publicacion-container">
+                <FontAwesomeIcon onClick={()=>abrir(link)} className="icono-publicaciones" icon={faFilePdf}/>
+                <a className="anchor-pub" href={link} download={`${titulo}.pdf`} target="blank"><FontAwesomeIcon className="icono-publicaciones" icon={faDownload}/></a>
                 <p>{titulo}</p>
             </div>
         </>

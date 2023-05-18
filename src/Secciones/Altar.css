@@ -18,8 +18,8 @@
 }
 .gaucho {
   position: absolute;
-  top: 40px;
   width: 180px;
+  margin-top: 40px;
 }
 .botones-container {
     position: relative;
