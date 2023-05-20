@@ -1,27 +1,57 @@
 .pedidos-container {
-    position: absolute;
-    height: 200px;
-    width: 100%;
-    bottom: -10px;
-    text-align: center;
+  position: absolute;
+  height: 200px;
+  width: 100%;
+  bottom: -10px;
+  display: flex;
+  justify-content: end;
 }
-
 .test {
-    display: none;
+  display: none;
+}
+.pedido-textoContainer {
+  position: relative;
+  width: 85%;
+  margin-left: 15px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+.pedido-fecha {
+  margin: 0;
+  margin-bottom: 10px;
+}
+.pedido-texto {
+  margin: 0;
+}
+.pedido-ofrenda {
+  position: relative;
+  width: 15%;
+  margin-right: 10px;
 }
 
 @media screen and (min-width: 600px) {
-    .pedidos-container {
-        position: absolute;
-        width: 200px;
-        height: 400px;
-        right: -200px;
-        /*background-color: blueviolet;*/
-        top: calc(50vh - 250px);
-        margin: 0;
-      overflow: hidden;
-    }
-
-    
+  .pedidos-container {
+    position: absolute;
+    width: 100%;
+    height: 500px;
+    right: 0px;
+    left: 0px;
+    /*background-color: blueviolet;*/
+    top: calc(50vh - 150px);
+    margin: 0;
+    overflow: hidden;
+  }
 }
-  
+
+@media screen and (min-width: 1200px) {
+  .pedidos-container {
+    width: 100%;
+    height: 500px;
+    right: 0px;
+    left: 0px;
+    top: calc(50vh - 0px);
+    margin: 0;
+    overflow: hidden;
+  }
+}

@@ -33,7 +33,7 @@
   padding: 10px 0;
   overflow-y: hidden;
   position: absolute;
-  top: -20px;
+  top: 0px;
   left: calc(50% - 120px);
   animation: display ease;
   display: flex;

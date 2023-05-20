@@ -1,54 +1,74 @@
 {
-            "publicaciones": [
-                {
-                    "id": 1, 
-                    "titulo": "De Antonio Mamerto a Gauchito Gil: Estrategias de control y formas de resistencia popular en una región de frontera entre Argentina y Brasil",
-                    "link": "https://firebasestorage.googleapis.com/v0/b/gauchitoteca.appspot.com/o/publicaciones%2FMartins%20De%20Antonio%20Mamerto%20A%20Gauchito%20Gil%20Estragegias%20De%20Control.pdf?alt=media&token=c7eb658d-d4c6-4e40-8104-da787b20e56e"
-                },
-                {
-                    "id": 2, 
-                    "titulo": "“Mi Gauchito Gil”: Musical Reflections on a Folk Saint",
-                    "link": "https://firebasestorage.googleapis.com/v0/b/gauchitoteca.appspot.com/o/publicaciones%2FMi-Gauchito-Gil-Musical-Reflections.pdf?alt=media&token=2440e9fe-a9ef-467b-9b14-20990adb15f0"
-                },
-                {
-                    "id": 3, 
-                    "titulo": "La santidad popular de los bandidos",
-                    "link": "https://firebasestorage.googleapis.com/v0/b/gauchitoteca.appspot.com/o/publicaciones%2FSantidad%20popular%20bandidos%20Gauchito%20Gil%20tesis%20MA%20mexicano.pdf?alt=media&token=57fa49a1-ef52-4668-8042-24b14f6fff84"
-                },
-                {
-                    "id": 4, 
-                    "titulo": "...etc",
-                    "link": "https://firebasestorage.googleapis.com/v0/b/gauchitoteca.appspot.com/o/publicaciones%2FSantidad%20popular%20bandidos%20Gauchito%20Gil%20tesis%20MA%20mexicano.pdf?alt=media&token=57fa49a1-ef52-4668-8042-24b14f6fff84"   
-                }                
-            ],
-            "audios": [
-                {
-                    "id": 1,
-                    "entrevistado": "Selva Vera",
-                    "titulo": "Presentacion",
-                    "recopilador": "Juan Pablo Romero",
-                    "link": "https://firebasestorage.googleapis.com/v0/b/gauchitoteca.appspot.com/o/audios%2F1-%20Selva%20Vera%20Presentaci%C3%B3n.mp3?alt=media&token=4ac55a24-001a-4b6e-9c6f-8a27c1ed087c"
-                },
-                {
-                    "id": 2,
-                    "entrevistado": "Selva Vera",
-                    "titulo": "Milagros I",
-                    "recopilador": "Juan Pablo Romero",
-                    "link": "https://firebasestorage.googleapis.com/v0/b/gauchitoteca.appspot.com/o/audios%2F3-%20Selva%20Vera%20Milagros%20I.mp3?alt=media&token=b562694b-24b6-406c-8511-d8eccd67e160"
-                },
-                {
-                    "id": 3,
-                    "entrevistado": "Selva Vera",
-                    "titulo": "Milagros II",
-                    "recopilador": "Juan Pablo Romero",
-                    "link": "https://firebasestorage.googleapis.com/v0/b/gauchitoteca.appspot.com/o/audios%2F4-%20Selva%20Vera%20Milagro%20II.mp3?alt=media&token=74cd7088-2e8d-4091-b157-d620ca644163"
-                },
-                {
-                    "id": 4,
-                    "entrevistado": "Selva Vera",
-                    "titulo": "Milagros III",
-                    "recopilador": "Juan Pablo Romero",
-                    "link": "https://firebasestorage.googleapis.com/v0/b/gauchitoteca.appspot.com/o/audios%2F5-%20Selva%20Vera%20Milagro%20III.mp3?alt=media&token=910bb71f-2657-4c7c-9b19-8c8e0cfbe9eb"
-                }
-            ]
+  "publicaciones": [
+    {
+      "id": 1,
+      "titulo": "Actuar, fotografiar, per-formar identidades en y desde prácticas de religiosidad popular en la provincia de Corrientes",
+      "link": "https://firebasestorage.googleapis.com/v0/b/gauchitoteca.appspot.com/o/publicaciones%2F1.pdf?alt=media&token=b0e64a98-f236-4e9c-886d-b83fb14776ec"
+    },
+    {
+      "id": 2,
+      "titulo": "“Configuraciones de la nación argentina en la imagen del santo popular Gaucho Antonio Gil",
+      "link": "https://firebasestorage.googleapis.com/v0/b/gauchitoteca.appspot.com/o/publicaciones%2F2.pdf?alt=media&token=9561d4e7-27bf-4faf-9078-a932fcb873c3"
+    },
+    {
+      "id": 3,
+      "titulo": "Imagen, supervivencia y poder. Iconografías de gauchos rebeldes santificados",
+      "link": "https://firebasestorage.googleapis.com/v0/b/gauchitoteca.appspot.com/o/publicaciones%2F3.pdf?alt=media&token=0b56bacc-e8f8-4741-b4b5-674621593208"
+    },
+    {
+      "id": 4,
+      "titulo": "Experiencias visuales de umbral: el “gauchito” fotogénico y diferencial desde capturas en desplazamiento",
+      "link": "https://firebasestorage.googleapis.com/v0/b/gauchitoteca.appspot.com/o/publicaciones%2F4.pdf?alt=media&token=e3ce80f1-dadd-4446-bf65-f1f9ff5a65bb"
+    },
+    {
+      "id": 5,
+      "titulo": "El Gauchito Gil neo expresionista del cine digital argentino",
+      "link": "https://firebasestorage.googleapis.com/v0/b/gauchitoteca.appspot.com/o/publicaciones%2F5.pdf?alt=media&token=a667300a-778d-4b7a-82b6-4e21e242b226"
+    },
+    {
+      "id": 6,
+      "titulo": "Performatividad y representación fotográfica. Dimensiones para reflexionar sobre la producción de sentido a través de las imágenes",
+      "link": "https://firebasestorage.googleapis.com/v0/b/gauchitoteca.appspot.com/o/publicaciones%2F6.pdf?alt=media&token=bb23b21d-e09e-4e48-a9f2-32e15a229336"
+    },
+    {
+      "id": 7,
+      "titulo": "Autobiografía fabulada y un Gaucho sublevado en la producción fotográfica de Marcos López",
+      "link": "https://firebasestorage.googleapis.com/v0/b/gauchitoteca.appspot.com/o/publicaciones%2F7.pdf?alt=media&token=f34066f0-c095-40e1-829f-a5cf1d7289bd"
+    },
+    {
+      "id": 8,
+      "titulo": "Sobre los estudios del bandolerismo social y sus proyecciones",
+      "link": "https://firebasestorage.googleapis.com/v0/b/gauchitoteca.appspot.com/o/publicaciones%2F8.pdf?alt=media&token=73371818-6c20-4884-bf2d-6a2dcef55807"
+    }
+  ],
+  "audios": [
+    {
+      "id": 1,
+      "entrevistado": "Selva Vera",
+      "titulo": "Presentacion",
+      "recopilador": "Juan Pablo Romero",
+      "link": "https://firebasestorage.googleapis.com/v0/b/gauchitoteca.appspot.com/o/audios%2F1-%20Selva%20Vera%20Presentaci%C3%B3n.mp3?alt=media&token=4ac55a24-001a-4b6e-9c6f-8a27c1ed087c"
+    },
+    {
+      "id": 2,
+      "entrevistado": "Selva Vera",
+      "titulo": "Milagros I",
+      "recopilador": "Juan Pablo Romero",
+      "link": "https://firebasestorage.googleapis.com/v0/b/gauchitoteca.appspot.com/o/audios%2F3-%20Selva%20Vera%20Milagros%20I.mp3?alt=media&token=b562694b-24b6-406c-8511-d8eccd67e160"
+    },
+    {
+      "id": 3,
+      "entrevistado": "Selva Vera",
+      "titulo": "Milagros II",
+      "recopilador": "Juan Pablo Romero",
+      "link": "https://firebasestorage.googleapis.com/v0/b/gauchitoteca.appspot.com/o/audios%2F4-%20Selva%20Vera%20Milagro%20II.mp3?alt=media&token=74cd7088-2e8d-4091-b157-d620ca644163"
+    },
+    {
+      "id": 4,
+      "entrevistado": "Selva Vera",
+      "titulo": "Milagros III",
+      "recopilador": "Juan Pablo Romero",
+      "link": "https://firebasestorage.googleapis.com/v0/b/gauchitoteca.appspot.com/o/audios%2F5-%20Selva%20Vera%20Milagro%20III.mp3?alt=media&token=910bb71f-2657-4c7c-9b19-8c8e0cfbe9eb"
+    }
+  ]
 }

@@ -27,10 +27,19 @@ export default function Santuarios({ setRutaSeccion }) {
       thumbnail: imagen.data().thumb,
       originalTitle: imagen.data().lugar,
       descripcion: imagen.data().fotografo,
-      originalHeight: isCel() ? 250 : 400,
+      originalHeight: originalHeight(),
       thumbnailHeight: 100,
     }));
     setImagenes(data);
+  }
+  function originalHeight() {
+    if (windowSize.width < 600) {
+      return 250;
+    } else if (windowSize.width < 1400) {
+      return 400;
+    } else {
+      return 550;
+    }
   }
   function isCel() {
     return windowSize.width < 600;
@@ -39,43 +48,60 @@ export default function Santuarios({ setRutaSeccion }) {
     setIndexAcutal(elSlideRef.current.getCurrentIndex());
   }
   function agrandar() {
-    setAmpliar(imagenes[indexActual].original);    
+    setAmpliar(imagenes[indexActual].original);
   }
-  const cerrarAgrandar = () => setAmpliar(null);
+  const cerrarAgrandar = (e) => {
+    if (e.target.className != "imagenGrande") {
+      setAmpliar(null);
+    }
+  };
 
   return (
     <>
-      {ampliar && (<div className="imagenGrande-container">
-        <button onClick={()=> cerrarAgrandar()}>X</button>
-        <img className="imagenGrande" src={ampliar}></img>
-      </div>)}
-
-    <div className="gallery-container">
-      {imagenes.length ? (
-        <div className="gallery-descripciones-container">
-          <p className="gallery-itemDescription">
-            {"Lugar de la foto: " + imagenes[indexActual].originalTitle}
-          </p>
-          <p className="gallery-itemDescription">
-            {"por: " + imagenes[indexActual].descripcion}
-          </p>
+      {ampliar && (
+        <div
+          className="imagenGrande-container"
+          onClick={(e) => cerrarAgrandar(e)}
+        >
+          <button
+            className="cerrar-agrandar"
+            onClick={(e) => cerrarAgrandar(e)}
+          >
+            X
+          </button>
+          <img className="imagenGrande" src={ampliar}></img>
         </div>
-      ) : (
-        <></>
       )}
-      <ImageGallery
-        ref={elSlideRef}
-        items={imagenes}
-        infinite={true}
-        onSlide={getIndex}
-        slideDuration={400}
-        slideInterval={4000}
-        showThumbnails={!isCel()}
-        autoPlay={true}
-      />
-      
-    </div>
-    <button className="boton-agrandar" onClick={()=>agrandar()}>ampliar</button>
+
+      <div className="gallery-container">
+        {imagenes.length ? (
+          <div className="gallery-descripciones-container">
+            <p className="gallery-itemDescription">
+              Lugar de la foto: <b>{imagenes[indexActual].originalTitle}</b>.
+              por: {imagenes[indexActual].descripcion}
+            </p>
+          </div>
+        ) : (
+          <></>
+        )}
+        <ImageGallery
+          ref={elSlideRef}
+          items={imagenes}
+          infinite={true}
+          onSlide={getIndex}
+          slideDuration={400}
+          slideInterval={4000}
+          showThumbnails={!isCel()}
+          showFullscreenButton={false}
+          showPlayButton={false}
+          autoPlay={true}
+        />
+      </div>
+      {!ampliar && (
+        <button className="boton-agrandar button-30" onClick={() => agrandar()}>
+          Ampliar
+        </button>
+      )}
     </>
   );
 }

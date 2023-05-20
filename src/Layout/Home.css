@@ -1,60 +1,58 @@
 .home-container {
-    position: relative;
-    width: 100%;
-    min-height: 100vh;
-    overflow: hidden;
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  /* overflow: hidden; */
 }
 .titulo-container {
-    position:relative;
-    top: 25px;
-    width: 100%;
+  position: relative;
+  top: 25px;
+  width: 100%;
 }
 .titulo-container:hover {
-    cursor: pointer;
+  cursor: pointer;
 }
 .titulo {
-    margin: 0;
-    text-align: center;
-    font-size: 40px;
-    font-weight: 800;
-    color: #fff;
+  margin: 0;
+  text-align: center;
+  font-size: 40px;
+  font-weight: 800;
+  color: #fff;
 }
 .secciones-container {
-    position: relative;
-    width: 100%;
-    /*width: calc(100% -  60px);*/
-    /*margin-right:200px;*/
-    /*margin-top: 30px;*/
-    height: calc(100vh - 260px);
+  position: relative;
+  width: 100%;
+  /*width: calc(100% -  60px);*/
+  /*margin-right:200px;*/
+  /*margin-top: 30px;*/
+  height: calc(100vh - 260px);
 }
-.tituloSeccion-container{
-    position: relative;
-    margin-left: 30px;
+.tituloSeccion-container {
+  position: relative;
+  margin-left: 30px;
 }
 .tituloSeccion {
-    font-size: 30px;
-    color: #fff;
+  font-size: 30px;
+  color: #fff;
 }
 
 @media screen and (min-width: 600px) {
-    .titulo {
-        font-size: 70px;
-    }
-    .titulo-container {
-        top: 30px;
-        left: calc(50% - 250px);
-        width: 500px;
-    }
-    .secciones-container {
-        position: absolute;
-        width: calc(100vw - 500px);
-        left: 250px;
-        top: 120px;
-        margin-left: 0px;
-    }
-    .tituloSeccion-container {
-        margin-left: 60px;
-    }
+  .titulo {
+    font-size: 70px;
+  }
+  .titulo-container {
+    top: 30px;
+    left: calc(50% - 250px);
+    width: 500px;
+  }
+  .secciones-container {
+    position: absolute;
+    width: calc(100vw - 500px);
+    left: 250px;
+    top: 120px;
+    margin-left: 0px;
+  }
+  .tituloSeccion-container {
+    margin-left: 60px;
+  }
 }
-
-
