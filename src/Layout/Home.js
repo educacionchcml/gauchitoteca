@@ -11,6 +11,7 @@ import Publicaciones from "../Secciones/Publicaciones";
 import Santuarios from "../Secciones/Santuarios";
 import Altar from "../Secciones/Altar";
 import "./Home.css";
+import Dashboard from "../Secciones/Dashboard";
 
 export function Home() {
   const global = useContext(GlobalContext);
@@ -39,12 +40,12 @@ export function Home() {
 
   return (
     <div className="home-container">
-      {isOpenEncabezado && (
+      {/* {isOpenEncabezado && (
         <ModalEncabezado closeEncabezado={closeEncabezado}></ModalEncabezado>
-      )}
+      )} */}
       {isOpenFormPedidos && <FormPedidos cerrarForm={cerrarForm}></FormPedidos>}
       <div onClick={() => mostrarAltar()} className="titulo-container">
-        <h1 className="titulo">GAUCHITOTECA</h1>
+        {/* <h1 className="titulo">GAUCHITOTECA</h1> */}
       </div>
       <CarrouselSecciones></CarrouselSecciones>
       <div className="secciones-container">
@@ -69,6 +70,7 @@ export function Home() {
               />
             }
           />
+          <Route path="/dashboard" element={<Dashboard setRutaSeccion={setRutaSeccion}/>}></Route>
           <Route
             path="/audios"
             element={<Audios setRutaSeccion={setRutaSeccion} />}
