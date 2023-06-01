@@ -15,6 +15,7 @@ import Publicaciones from "../Secciones/Publicaciones";
 import Santuarios from "../Secciones/Santuarios";
 import Altar from "../Secciones/Altar";
 import "./Home.css";
+import Dashboard from "../Secciones/Dashboard";
 
 export function Home() {
   const logout = () => {
@@ -49,12 +50,10 @@ export function Home() {
   return (
     <div className="home-container">
       {global.isAuth && <button onClick={logout}>Cerrar sesion</button>}
-      {isOpenEncabezado && (
-        <ModalEncabezado closeEncabezado={closeEncabezado}></ModalEncabezado>
-      )}
+      {isOpenEncabezado && <ModalEncabezado closeEncabezado={closeEncabezado}></ModalEncabezado>}
       {isOpenFormPedidos && <FormPedidos cerrarForm={cerrarForm}></FormPedidos>}
       <div onClick={() => mostrarAltar()} className="titulo-container">
-        <h1 className="titulo">GAUCHITOTECA</h1>
+        { <h1 className="titulo">GAUCHITOTECA</h1> }
       </div>
       <CarrouselSecciones></CarrouselSecciones>
       <div className="secciones-container">
@@ -81,6 +80,7 @@ export function Home() {
               />
             }
           />
+          <Route path="/dashboard" element={<Dashboard setRutaSeccion={setRutaSeccion}/>}></Route>
           <Route
             path="/audios"
             element={<Audios setRutaSeccion={setRutaSeccion} />}
