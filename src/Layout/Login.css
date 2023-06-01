@@ -1,0 +1,47 @@
+.login-container {
+    width: 100%;
+    position: relative;
+    display: grid;
+    place-items: center;
+}
+
+input, label {
+    display: block;
+    margin-bottom: 10px;
+    width: 80%;
+    height: 20px;
+    border-radius: 5px;
+    border: solid rgb(129, 129, 129) 1px;
+}
+label {
+    margin-bottom: 2px;
+    border: none;
+}
+form{
+    padding: 20px;
+}
+
+.boton-login {
+    height: 30px;
+    border-radius: 5px;
+    border: none;
+    padding: 0 10px;
+    margin-top: 20px;
+    margin-right: 10px;
+    float: right;
+}
+
+.form-container {
+    position: relative;
+    top: 20px;
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    height: 220px;
+    background-color: rgb(255, 92, 71);
+    border-radius: 10px;
+}
+.invalido {
+    position: relative;
+    bottom: 10px;
+}

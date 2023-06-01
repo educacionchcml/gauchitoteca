@@ -3,35 +3,21 @@ import { collection, query, where, getDocs } from "firebase/firestore";
 import { pedidosCollectionRef } from "../firebase";
 import Pedido from "./Pedido";
 import "./Pedidos.css";
+import  usePedidos  from "./../Hooks/usePedidos";
 
 export default function Pedidos({ actualizacion }) {
-  const [losPedidos, setLosPedidos] = useState();
   const [pedidosMostrar, setPedidosMostrar] = useState();
-
+  const dataPedidos = usePedidos(actualizacion);
+ 
   useEffect(() => {
-    obtenerPedidos();
-  }, [actualizacion]);
-
-  useEffect(() => {
-    if (losPedidos) {
+    if (dataPedidos) {
       desordenar();
       const intervalo = setInterval(desordenar, 4000);
     }
-  }, [losPedidos]);
-
-  async function obtenerPedidos() {
-    const documentsSnapshots = await getDocs(pedidosCollectionRef);
-    const pedidos = documentsSnapshots.docs.map((pedido, i) => ({
-      id: pedido.id,
-      pedido: pedido.data().pedido,
-      ofrenda: pedido.data().ofrenda,
-      fecha: pedido.data().fecha,
-    }));
-    setLosPedidos(pedidos);
-  }
+  }, [dataPedidos]);
 
   function desordenar() {
-    let lpDesordenados = losPedidos.sort(function (a, b) {
+    let lpDesordenados = dataPedidos.sort(function (a, b) {
       return Math.random() - 0.5;
     });
     setPedidosMostrar([...lpDesordenados]);

@@ -8,7 +8,6 @@ import { signOut } from "firebase/auth";
 import { auth } from "../firebase";
 import ModalEncabezado from "./ModalEncabezado";
 import Login from "./Login";
-import Admin from "../Secciones/Admin";
 import Audios from "../Secciones/Audios";
 import Arte from "../Secciones/Arte";
 import Publicaciones from "../Secciones/Publicaciones";
@@ -16,19 +15,16 @@ import Santuarios from "../Secciones/Santuarios";
 import Altar from "../Secciones/Altar";
 import "./Home.css";
 import Dashboard from "../Secciones/Dashboard";
+import Signed from "./Signed";
 
 export function Home() {
-  const logout = () => {
-    signOut(auth);
-    global.setIsAuth(false);
-    navigate("/");
-  };
+  const navigate = useNavigate();
   const global = useContext(GlobalContext);
   const [isOpenEncabezado, openEncabezado, closeEncabezado] = useModal(false);
   const [isOpenFormPedidos, openFormPedidos, closeFormPedidos] =
     useModal(false);
   const [rutaSeccion, setRutaSeccion] = useState("");
-  //const [actualizacion, setActualizacion] = useState(false);
+  const [actualizacion, setActualizacion] = useState(false);
 
   useEffect(() => {
     if (global.primeraVez) {
@@ -36,20 +32,28 @@ export function Home() {
       global.setPrimeraVez(false);
     }
   }, []);
-  const navigate = useNavigate();
+  
   const mostrarAltar = () => {
     navigate("/");
     setRutaSeccion("");
   };
 
+  const logout = () => {
+    signOut(auth);
+    global.setIsAuth(false);
+    navigate("/");
+  };
+
+  const navegarPanel = () => navigate("/admin");
+
   const cerrarForm = () => {
-    //setActualizacion(true);
+    setActualizacion(true);
     closeFormPedidos();
   };
 
   return (
     <div className="home-container">
-      {global.isAuth && <button onClick={logout}>Cerrar sesion</button>}
+      {global.isAuth && <Signed logout={logout} navegarPanel={navegarPanel}></Signed>}
       {isOpenEncabezado && <ModalEncabezado closeEncabezado={closeEncabezado}></ModalEncabezado>}
       {isOpenFormPedidos && <FormPedidos cerrarForm={cerrarForm}></FormPedidos>}
       <div onClick={() => mostrarAltar()} className="titulo-container">
@@ -69,7 +73,7 @@ export function Home() {
         )}
         <Routes>
           <Route path="/login" element={<Login></Login>}/>
-          <Route path="/admin"  element={global.isAuth ? <Admin></Admin> : <Login></Login>}/>
+          <Route path="/admin"  element={global.isAuth ? <Dashboard setRutaSeccion={setRutaSeccion}></Dashboard> : <Login></Login>}/>
           <Route
             path="/"
             element={
@@ -77,10 +81,10 @@ export function Home() {
                 openFormPedidos={openFormPedidos}
                 setRutaSeccion={setRutaSeccion}
                 cerrarForm={cerrarForm}
+                actualizacion={actualizacion}
               />
             }
           />
-          <Route path="/dashboard" element={<Dashboard setRutaSeccion={setRutaSeccion}/>}></Route>
           <Route
             path="/audios"
             element={<Audios setRutaSeccion={setRutaSeccion} />}

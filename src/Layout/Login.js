@@ -2,6 +2,7 @@ import React, { useState, useContext } from "react";
 import { GlobalContext } from "../Contexts/GlobalContext";
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
+import "./Login.css";
 
 const auth = getAuth();
 
@@ -29,14 +30,18 @@ export default function Login() {
             setInvalido(true);
         });
     }
-    return (<div>
-    <form>
-        <label htmlFor="email">Email</label>
-        <input onChange={handleChange} type="email" name="email" placeholder="ingrese el email"></input>
-        <label htmlFor="password">Constraseña</label>
-        <input onChange={handleChange} type="password" name="password" placeholder="ingrese la contraseña"></input>
-        <button onClick={(e) => handleSubmit(e)} type="submit">Ingresar</button>
-    </form>
-    {invalido && <h1>Usuario o contraseña inválidos</h1>}
-    </div>)
+    return (
+        <div className="login-container">
+            <div className="form-container">
+                <form>
+                    <label htmlFor="email">Email</label>
+                    <input onChange={handleChange} type="email" name="email" placeholder="ingrese el email"></input>
+                    <label htmlFor="password">Constraseña</label>
+                    <input onChange={handleChange} type="password" name="password" placeholder="ingrese la contraseña"></input>
+                    <button onClick={(e) => handleSubmit(e)}  className="boton-login" type="submit">Ingresar</button>
+                </form>
+            </div>
+            {invalido && <div className="invalido"><h1>Usuario o contraseña inválidos</h1></div>}
+        </div>
+        )
 }
