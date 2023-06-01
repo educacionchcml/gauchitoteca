@@ -3,6 +3,7 @@ import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
 import { getStorage, ref } from "firebase/storage";
 import { getFirestore } from "firebase/firestore";
+import { getAuth } from "firebase/auth";
 
 import { collection } from "firebase/firestore";
 
@@ -32,6 +33,9 @@ export const imagenesCollectionRef = collection(db, "imagenes");
 
 //Storage
 export const storage = getStorage();
+
+//Auth
+export const auth = getAuth(app);
 
 //Analitics
 const analytics = getAnalytics(app);

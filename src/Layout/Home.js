@@ -4,7 +4,11 @@ import FormPedidos from "../Components/FormPedidos";
 import { useModal } from "./../Hooks/useModal";
 import CarrouselSecciones from "./CarrouselSecciones";
 import { GlobalContext } from "../Contexts/GlobalContext";
+import { signOut } from "firebase/auth";
+import { auth } from "../firebase";
 import ModalEncabezado from "./ModalEncabezado";
+import Login from "./Login";
+import Admin from "../Secciones/Admin";
 import Audios from "../Secciones/Audios";
 import Arte from "../Secciones/Arte";
 import Publicaciones from "../Secciones/Publicaciones";
@@ -13,6 +17,11 @@ import Altar from "../Secciones/Altar";
 import "./Home.css";
 
 export function Home() {
+  const logout = () => {
+    signOut(auth);
+    global.setIsAuth(false);
+    navigate("/");
+  };
   const global = useContext(GlobalContext);
   const [isOpenEncabezado, openEncabezado, closeEncabezado] = useModal(false);
   const [isOpenFormPedidos, openFormPedidos, closeFormPedidos] =
@@ -39,6 +48,7 @@ export function Home() {
 
   return (
     <div className="home-container">
+      {global.isAuth && <button onClick={logout}>Cerrar sesion</button>}
       {isOpenEncabezado && (
         <ModalEncabezado closeEncabezado={closeEncabezado}></ModalEncabezado>
       )}
@@ -59,6 +69,8 @@ export function Home() {
           <></>
         )}
         <Routes>
+          <Route path="/login" element={<Login></Login>}/>
+          <Route path="/admin"  element={global.isAuth ? <Admin></Admin> : <Login></Login>}/>
           <Route
             path="/"
             element={
