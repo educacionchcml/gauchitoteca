@@ -1,20 +1,19 @@
 import React, { useEffect, useState } from "react";
-//import "./PedidosAll.css";
+import "./PedidosAll.css";
 import usePedidos from "./../Hooks/usePedidos";
+import useOfrendas from "./../Hooks/useOfrendas";
 
 export default function PedidosAll() {
-    const [datosMostrar, setDatosMostrar] = useState();
-    const dataPedidos = usePedidos(false);
-
-    useEffect(()=>{    
-        if(dataPedidos) {
-            setPedidos();
-            console.log(dataPedidos);
+    const { losPedidos, isLoading } = usePedidos(false);
+    const [p, setP] = useState();
+    useEffect(()=>{
+        if(losPedidos) {
+            setP(losPedidos);
         }
-    },[dataPedidos]);
-
-    function setPedidos() {
-        setDatosMostrar(dataPedidos);
+    },[isLoading])
+    
+    if (isLoading) {
+        return <h1>Cargando pedidos...</h1>
     }
     
     return(
@@ -23,21 +22,19 @@ export default function PedidosAll() {
             <table>
                 <tbody>
                     <tr>
-                        <th>id</th>
                         <th>fecha</th>
                         <th>pedido</th>
                         <th>ofrenda</th>
                     </tr>
-                    {datosMostrar && datosMostrar.map((item, index)=>{
+                    {losPedidos ? (losPedidos.map((ped, index)=>(
                         <tr key={index}>
-                            <td>{item.id}</td>
-                            <td>{item.fecha}</td>
-                            <td>{item.pedido}</td>
-                            <td>{item.ofrenda}</td>
+                            <td>{new Date(ped.fecha).toLocaleDateString()}</td>
+                            <td>{ped.pedido}</td>
+                            <td className="tdCentrada"><img src={useOfrendas(ped.ofrenda - 1)}></img></td>
                         </tr>
-                })}
+                ))) : (<tr><td>No hay pedidos</td></tr>)}
                 </tbody>
-            </table>
+            </table>             
         </>
     )
 }

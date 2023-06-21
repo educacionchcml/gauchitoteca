@@ -7,17 +7,19 @@ import  usePedidos  from "./../Hooks/usePedidos";
 
 export default function Pedidos({ actualizacion }) {
   const [pedidosMostrar, setPedidosMostrar] = useState();
-  const dataPedidos = usePedidos(actualizacion);
- 
+  const [p, setP] = useState();
+  const { losPedidos } = usePedidos(actualizacion);
+  
   useEffect(() => {
-    if (dataPedidos) {
+    setP(losPedidos);
+    if(p) {
       desordenar();
-      const intervalo = setInterval(desordenar, 4000);
+      const intervalo = setInterval(desordenar, p.lenght * 4000);
     }
-  }, [dataPedidos]);
+  }, [losPedidos]);
 
   function desordenar() {
-    let lpDesordenados = dataPedidos.sort(function (a, b) {
+    let lpDesordenados = p.sort(function (a, b) {
       return Math.random() - 0.5;
     });
     setPedidosMostrar([...lpDesordenados]);

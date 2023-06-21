@@ -1,8 +1,8 @@
 import React from "react";
 import "./Publicacion.css";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faFilePdf} from '@fortawesome/free-solid-svg-icons'
-import { faDownload} from '@fortawesome/free-solid-svg-icons'
+import { faFilePdf } from '@fortawesome/free-solid-svg-icons'
+import { faDownload } from '@fortawesome/free-solid-svg-icons'
 
 export default function Publicacion({titulo, link, openPdf, setLinkPdf}) {
     function abrir(link) {
